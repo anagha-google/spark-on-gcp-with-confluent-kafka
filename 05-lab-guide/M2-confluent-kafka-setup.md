@@ -229,7 +229,8 @@ Set Kafka cluster "lkc-w732yj" as the active cluster for environment "env-12kmy5
 
 4.4. Create topic
 ```
-confluent kafka topic create contest-entries --cluster $GAIA_CLUSTER_ID
+TOPIC_NM=contest-entries
+confluent kafka topic create $TOPIC_NM --cluster $GAIA_CLUSTER_ID
 ```
 More topic operations can be found in the [Confluent docs](https://docs.confluent.io/cloud/current/client-apps/topics/manage.html#edit-a-topic).
 
@@ -249,6 +250,8 @@ confluent kafka topic list --cluster $GAIA_CLUSTER_ID
 ![CC](../00-images/cc24.png)  
 
 <br><br>
+
+<hr>
 
 ## 5. Configuration we need to publish to Kafka and consume from Kafka
 
@@ -273,9 +276,33 @@ confluent api-key use $GAIA_CLUSTER_USERNAME --resource $GAIA_CLUSTER_ID
 export GAIA_CLUSTER_BOOTSTRAP_SERVERS=`confluent kafka cluster describe $GAIA_CLUSTERCLUSTER_ID -ojson | jq -r '.endpoint'`
 ```
 
-Author's sample-
+Author's bootstrap servers-
 ```
 echo $GAIA_CLUSTER_BOOTSTRAP_SERVERS
 SASL_SSL://pkc-3xxxw.us-central1.gcp.confluent.cloud:9092
 ```
 
+5.5. The configuration
+
+```
+echo topic=$TOPIC_NM
+echo bootstrap.servers=$GAIA_CLUSTER_BOOTSTRAP_SERVERS
+echo security.protocol=SASL_SSL
+echo sasl.mechanisms=PLAIN
+echo sasl.username=$GAIA_CLUSTER_USERNAME
+echo sasl.password=$GAIA_CLUSTER_PASSWORD
+```
+
+Author's output-
+```
+topic=contest-entries
+bootstrap.servers=SASL_SSL://pkc-3xxxw.us-central1.gcp.confluent.cloud:9092
+security.protocol=SASL_SSL
+sasl.mechanisms=PLAIN
+sasl.username=4E7xxxS4TKY
+sasl.password=rOUAo4+1qedIHiUWf7r-------xxx??Hello----iWVi
+```
+
+<hr>
+
+This concludes the module. Please proceed to the next module.
