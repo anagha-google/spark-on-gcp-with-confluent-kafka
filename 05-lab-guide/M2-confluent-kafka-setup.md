@@ -168,8 +168,6 @@ Follow the screenshots below and create a cluster called gaia.
 
 <br><br>
 
-Grab your Confluent Cluster ID as shown below
-
 ![CC](../00-images/cc18.png)  
 
 <br><br>
@@ -179,6 +177,15 @@ Grab your Confluent Cluster ID as shown below
 <br><br>
 
 ![CC](../00-images/cc20.png)  
+
+<br><br>
+
+![CC](../00-images/cc21.png)  
+
+<br><br>
+
+
+![CC](../00-images/cc22.png)  
 
 <br><br>
 
@@ -222,4 +229,14 @@ More topic operations can be found in the [Confluent docs](https://docs.confluen
 confluent kafka topic list --cluster $GAIA_CLUSTER_ID
 ```
 
+4. Review in the UI
 
+
+![CC](../00-images/cc23.png)  
+
+<br><br>
+
+
+![CC](../00-images/cc24.png)  
+
+<br><br>
