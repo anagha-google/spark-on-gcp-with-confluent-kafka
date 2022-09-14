@@ -305,4 +305,31 @@ sasl.password=rOUAo4+1qedIHiUWf7r-------xxx??Hello----iWVi
 
 <hr>
 
+## 6. Clone this repo in Cloud Shell
+
+```
+cd ~
+git clone https://github.com/anagha-google/spark-on-gcp-with-confluent-kafka.git
+```
+
+## 7. Update the Kafka cluster config file withyour details
+This is needed by both the Kafka producer (Python message generator) and Kafka consumer (Spark) in the lab.
+
+7.1. Navigate to the configuration directory
+
+
+
+7.2. View the config file as it stands
+
+7.3. Run these updates to the config file
+
+
+
+
+
+
+
+
+<br>
+
 This concludes the module. Please proceed to the next module.
