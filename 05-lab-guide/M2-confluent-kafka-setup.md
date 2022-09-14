@@ -168,6 +168,12 @@ Follow the screenshots below and create a cluster called gaia.
 
 <br><br>
 
+Grab your Confluent Cluster ID as shown below
+
+![CC](../00-images/cc18.png)  
+
+<br><br>
+
 
 <hr>
 
