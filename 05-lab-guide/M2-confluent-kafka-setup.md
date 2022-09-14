@@ -174,23 +174,52 @@ Grab your Confluent Cluster ID as shown below
 
 <br><br>
 
+![CC](../00-images/cc19.png)  
+
+<br><br>
+
+![CC](../00-images/cc20.png)  
+
+<br><br>
+
 
 <hr>
 
 ## 4. Create a Kafka topic from the Confluent CLI on Cloud Shell
 
-1. Get the cluster ID
-```
-CLUSTER_ID=`confluent cluster list`
-```
-
+1. List the clusters in the environment
 
 ```
-confluent kafka topic create contest-entries --cluster gaia
+confluent kafka cluster list
+```
+ 
+Author's output-
+```
+       Id      | Name | Type  | Provider |   Region    | Availability | Status
+---------------+------+-------+----------+-------------+--------------+---------
+    lkc-w732yj | gaia | BASIC | gcp      | us-central1 | single-zone  | UP
 ```
 
+2. Get your gaia cluster ID (auto-generated GUID)
+```
+GAIA_CLUSTER_ID=`confluent kafka cluster list | grep gaia | cut -d' ' -f5`
+```
+
+Author's example-
+```
+lkc-w732yj
+```
+
+2. Create topic
+```
+confluent kafka topic create contest-entries --cluster $GAIA_CLUSTER_ID
+```
 More topic operations can be found in the [Confluent docs](https://docs.confluent.io/cloud/current/client-apps/topics/manage.html#edit-a-topic).
 
+3. List topics to ensure it got created
 
+```
+confluent kafka topic list --cluster $GAIA_CLUSTER_ID
+```
 
 
