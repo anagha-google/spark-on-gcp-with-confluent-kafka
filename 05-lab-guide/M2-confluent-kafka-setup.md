@@ -194,7 +194,7 @@ Follow the screenshots below and create a cluster called gaia.
 
 ## 4. Create a Kafka topic from the Confluent CLI on Cloud Shell
 
-1. List the clusters in the environment
+4.1. List the clusters in the environment
 
 ```
 confluent kafka cluster list
@@ -207,7 +207,7 @@ Author's output-
     lkc-w732yj | gaia | BASIC | gcp      | us-central1 | single-zone  | UP
 ```
 
-2. Get your gaia cluster ID (auto-generated GUID)
+4.2. Get your gaia cluster ID (auto-generated GUID)
 ```
 GAIA_CLUSTER_ID=`confluent kafka cluster list | grep gaia | cut -d' ' -f5`
 ```
@@ -217,20 +217,29 @@ Author's example-
 lkc-w732yj
 ```
 
-2. Create topic
+4.3. Configure the CLI to use the cluster
+```
+confluent kafka cluster use $GAIA_CLUSTER_ID
+```
+
+Author's output-
+```
+Set Kafka cluster "lkc-w732yj" as the active cluster for environment "env-12kmy5".
+```
+
+4.4. Create topic
 ```
 confluent kafka topic create contest-entries --cluster $GAIA_CLUSTER_ID
 ```
 More topic operations can be found in the [Confluent docs](https://docs.confluent.io/cloud/current/client-apps/topics/manage.html#edit-a-topic).
 
-3. List topics to ensure it got created
+4.5. List topics to ensure it got created
 
 ```
 confluent kafka topic list --cluster $GAIA_CLUSTER_ID
 ```
 
-4. Review in the UI
-
+4.6. Review in the UI
 
 ![CC](../00-images/cc23.png)  
 
@@ -240,3 +249,27 @@ confluent kafka topic list --cluster $GAIA_CLUSTER_ID
 ![CC](../00-images/cc24.png)  
 
 <br><br>
+
+## 5. Configuration we need to publish to Kafka and consume from Kafka
+
+5.1. Create an API key and grab the cluster username and password from Confluent CLI
+
+```
+read GAIA_CLUSTER_USERNAME GAIA_CLUSTER_PASSWORD < <(echo $(confluent api-key create --resource $GAIA_CLUSTER_ID -ojson | jq -r '.key, .secret'))
+```
+
+5.2. Export the same for use
+```
+export GAIA_CLUSTER_USERNAME GAIA_CLUSTER_PASSWORD
+```
+
+5.3. Configure the CLI to use the API key where applicable
+```
+confluent api-key use $GAIA_CLUSTER_USERNAME --resource $GAIA_CLUSTER_ID
+```
+5.4. Grab the bootstrap server list
+
+export GAIA_CLUSTER_BOOTSTRAP_SERVERS=`confluent kafka cluster describe $GAIA_CLUSTERCLUSTER_ID -ojson | jq -r '.endpoint'`
+
+Author's sample-
+
