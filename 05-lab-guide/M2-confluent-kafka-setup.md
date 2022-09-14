@@ -5,6 +5,8 @@ This module covers how to create your Confluent Cloud environmnent, cluster and 
 ## 1. Provision Confluent Cloud from the GCP marketplace
 https://console.cloud.google.com/marketplace/product/endpoints/payg-prod.gcpmarketplace.confluent.cloud
 
+![CC](../00-images/cc1.png)   
+
 
 
 
