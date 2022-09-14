@@ -33,6 +33,11 @@ If you are a GCP CE, use your @google.com address and not Argolis email.
 
 8. Check your email for the verification link and click it to login to Confluent Cloud
 
+![CC](../00-images/cc6.png)  
+
+<br><br>
+
+![CC](../00-images/cc7.png)  
 
 
 
