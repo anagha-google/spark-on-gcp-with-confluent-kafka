@@ -270,7 +270,7 @@ confluent api-key use $GAIA_CLUSTER_USERNAME --resource $GAIA_CLUSTER_ID
 5.4. Grab the bootstrap server list
 
 ```
-export GAIA_CLUSTER_BOOTSTRAP_SERVERS=`confluent kafka cluster describe $GAIA_CLUSTERCLUSTER_ID -ojson | jq -r '.endpoint'
+export GAIA_CLUSTER_BOOTSTRAP_SERVERS=`confluent kafka cluster describe $GAIA_CLUSTERCLUSTER_ID -ojson | jq -r '.endpoint'`
 ```
 
 Author's sample-
