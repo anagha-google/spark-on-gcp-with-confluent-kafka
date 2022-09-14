@@ -7,11 +7,7 @@ Successful completion of the prior module
 
 ## 1. Run the producer from Cloud Shell
 
-1.1. Clone this git repo
-```
-cd ~
-git clone https://github.com/anagha-google/spark-on-gcp-with-confluent-kafka.git
-```
+
 
 1.2. Navigate to the producer code
 ```
