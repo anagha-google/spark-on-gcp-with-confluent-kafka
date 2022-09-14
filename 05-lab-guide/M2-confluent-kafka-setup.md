@@ -355,7 +355,7 @@ cat gaia.conf
 Author's output-
 ```
 # Kafka
-bootstrap.servers=
+bootstrap.servers=pkc-3xxxw.us-central1.gcp.confluent.cloud:9092
 security.protocol=SASL_SSL
 sasl.mechanisms=PLAIN
 sasl.username=4E7_HOWDY_DO_S4TKY
