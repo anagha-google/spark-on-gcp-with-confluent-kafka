@@ -5,8 +5,28 @@ This module covers how to create your Confluent Cloud environmnent, cluster and 
 ## 1. Provision Confluent Cloud from the GCP marketplace
 https://console.cloud.google.com/marketplace/product/endpoints/payg-prod.gcpmarketplace.confluent.cloud
 
-![CC](../00-images/cc1.png)   
+1. Search for Confluent Cloud
+![CC](../00-images/cc1.png) 
 
+2. Click "SUBSCRIBE" button
+
+3. Review and agree to the terms (if you agree) and click "SUBSCRIBE"
+![CC](../00-images/cc2.png)  
+
+4. The "order request" will be sent to Confluent and then click "GO TO PRODUCT PAGE"
+![CC](../00-images/cc3.png)  
+
+5. Now click the "ENABLE" button
+![CC](../00-images/cc4.png)  
+
+6. Click the "MANAGE VIA CONFLUENT" button
+![CC](../00-images/cc5.png)  
+
+7. Signup for a new Confluent Cloud account
+If you are a GCP CE, use your @google.com address and not Argolis email.
+![CC](../00-images/cc6.png)  
+
+8. Check your email for the verification link and click it to login to Confluent Cloud
 
 
 
