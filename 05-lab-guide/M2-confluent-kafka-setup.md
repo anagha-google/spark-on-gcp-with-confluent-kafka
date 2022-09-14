@@ -95,23 +95,44 @@ confluent login
 
 ### 3.1. Create environment from confluent cli on cloud shell
 
+3.1.1. Create environment from the CLI
+Be sure to use the same name specified in the command below-
 ```
 confluent environment create gaia-dev
 ```
 
 Authors output:
 ```
-+------+--------------+
-| ID   | env-rrg1v9   |
-| Name | gaia-dev |
-+------+--------------+
++------+------------+
+| ID   | env-12kmy5 |
+| Name | gaia-dev   |
++------+------------+
 ```
 
 Other confluent environment commands are available here-
 https://docs.confluent.io/confluent-cli/current/command-reference/environment/index.html
 
+3.1.2. Configure the CLI to use the environment created
+
+a) Get the environment ID for gaia-dev
+```
+CC_ENV_ID=`confluent environment list | grep gaia-dev | cut -d' ' -f4`
+```
+
+b) Now set the CLI to use this environment
+```
+confluent environment use $CC_ENV_ID
+```
+
+The author's output-
+```
+$ confluent environment use $CC_ENV_ID
+Now using "env-12kmy5" as the default (active) environment.
+```
+
 ### 3.2. Create cluster from the Confluent Cloud UI
 
+Follow the screenshots below and create a cluster called gaia.
 
 ![CC](../00-images/cc11.png)  
 
@@ -148,7 +169,21 @@ https://docs.confluent.io/confluent-cli/current/command-reference/environment/in
 <br><br>
 
 
+<hr>
 
+## 4. Create a Kafka topic from the Confluent CLI on Cloud Shell
+
+1. Get the cluster ID
+```
+CLUSTER_ID=`confluent cluster list`
+```
+
+
+```
+confluent kafka topic create contest-entries --cluster gaia
+```
+
+More topic operations can be found in the [Confluent docs](https://docs.confluent.io/cloud/current/client-apps/topics/manage.html#edit-a-topic).
 
 
 
