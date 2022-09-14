@@ -274,4 +274,8 @@ export GAIA_CLUSTER_BOOTSTRAP_SERVERS=`confluent kafka cluster describe $GAIA_CL
 ```
 
 Author's sample-
+```
+echo $GAIA_CLUSTER_BOOTSTRAP_SERVERS
+SASL_SSL://pkc-3xxxw.us-central1.gcp.confluent.cloud:9092
+```
 
