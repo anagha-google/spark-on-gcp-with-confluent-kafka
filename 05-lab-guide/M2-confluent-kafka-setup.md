@@ -340,7 +340,7 @@ sasl.password=YOUR_PASSWORD
 7.3. Update the config file with your Kafka details
 
 ```
-sed -i s/YOUR_BOOTSTRAP_SERVER/$GAIA_CLUSTER_BOOTSTRAP_SERVER/g gaia.conf
+sed -i s/YOUR_BOOTSTRAP_SERVER/$GAIA_CLUSTER_BOOTSTRAP_SERVERS/g gaia.conf
 sed -i s/YOUR_USERNAME/$GAIA_CLUSTER_USERNAME/g gaia.conf
 sed -i s/YOUR_PASSWORD/$GAIA_CLUSTER_PASSWORD/g gaia.conf
 ```
