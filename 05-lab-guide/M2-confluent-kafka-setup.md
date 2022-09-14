@@ -42,28 +42,35 @@ If you are a GCP CE, use your @google.com address and not Argolis email.
 
 <hr>
 
-## 2. Install Confluent Cloud client on gcloud
+## 2. Install Confluent Cloud client on Cloud Shell
 
-1. Na
+2.1. Launch cloud shell
 
+![CC](../00-images/cc9.png)  
 
-### N1. Download and install the latest version in the default directory, ./bin:
+<br><br>
+
+![CC](../00-images/cc10.png)  
+
+<br><br>
+
+2.2. Download and install the latest version in the default directory, ./bin:
 ```
 curl -sL --http1.1 https://cnfl.io/cli | sh -s -- latest
 ```
 
-### N2. Set the PATH environment to include the directory that you downloaded the CLI binaries, ./bin:
+2.3. Set the PATH environment to include the directory that you downloaded the CLI binaries, ./bin:
 ```
 export PATH=$(pwd)/bin:$PATH
 ```
 
-### N3. Add this entry into your .bashrc:
+2.4. Add this entry into your .bashrc:
 ```
 export CONFLUENT_HOME=~/bin
 export PATH=$CONFLUENT_HOME/bin:$PATH
 ```
 
-### N4. Check Confluent version in cloud shell:
+2.5. Check Confluent version in cloud shell:
 ```
 confluent version
 ```
@@ -79,30 +86,69 @@ Go Version:  go1.18.1 (linux/amd64)
 Development: false
 ```
 
-### N4. Login to the Confluent CLI:
+2.6. Login to the Confluent CLI:
 ```
 confluent login
 ```
 
-## O. Create Confluent environment and cluster
+## 3. Create Confluent environment and cluster
 
-### O.1. Create environment
+### 3.1. Create environment from confluent cli on cloud shell
+
 ```
-confluent environment create gaia-env-dev
+confluent environment create gaia-dev
 ```
 
 Authors output:
 ```
 +------+--------------+
 | ID   | env-rrg1v9   |
-| Name | gaia-env-dev |
+| Name | gaia-dev |
 +------+--------------+
 ```
 
 Other confluent environment commands are available here-
 https://docs.confluent.io/confluent-cli/current/command-reference/environment/index.html
 
-### O.2. Create cluster
+### 3.2. Create cluster from the Confluent Cloud UI
+
+
+![CC](../00-images/cc11.png)  
+
+<br><br>
+
+
+![CC](../00-images/cc12.png)  
+
+<br><br>
+
+
+![CC](../00-images/cc13.png)  
+
+<br><br>
+
+
+![CC](../00-images/cc14.png)  
+
+<br><br>
+
+
+![CC](../00-images/cc15.png)  
+
+<br><br>
+
+
+![CC](../00-images/cc16.png)  
+
+<br><br>
+
+
+![CC](../00-images/cc17.png)  
+
+<br><br>
+
+
+
 
 
 
