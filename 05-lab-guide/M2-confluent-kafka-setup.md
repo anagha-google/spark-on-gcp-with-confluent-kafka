@@ -5,33 +5,33 @@ This module covers how to create your Confluent Cloud environmnent, cluster and 
 ## 1. Provision Confluent Cloud from the GCP marketplace
 https://console.cloud.google.com/marketplace/product/endpoints/payg-prod.gcpmarketplace.confluent.cloud
 
-1. Search for Confluent Cloud
+1.1. Search for Confluent Cloud
 
 ![CC](../00-images/cc1.png) 
 
-2. Click "SUBSCRIBE" button
+1.2. Click "SUBSCRIBE" button
 
-3. Review and agree to the terms (if you agree) and click "SUBSCRIBE"
+1.3. Review and agree to the terms (if you agree) and click "SUBSCRIBE"
 
 ![CC](../00-images/cc2.png)  
 
-4. The "order request" will be sent to Confluent and then click "GO TO PRODUCT PAGE"
+1.4. The "order request" will be sent to Confluent and then click "GO TO PRODUCT PAGE"
 ![CC](../00-images/cc3.png)  
 
-5. Now click the "ENABLE" button
+1.5. Now click the "ENABLE" button
 
 ![CC](../00-images/cc4.png)  
 
-6. Click the "MANAGE VIA CONFLUENT" button
+1.6. Click the "MANAGE VIA CONFLUENT" button
 
 ![CC](../00-images/cc5.png)  
 
-7. Signup for a new Confluent Cloud account
+1.7. Signup for a new Confluent Cloud account
 If you are a GCP CE, use your @google.com address and not Argolis email.
 
 ![CC](../00-images/cc6.png)  
 
-8. Check your email for the verification link and click it to login to Confluent Cloud
+1.8. Check your email for the verification link and click it to login to Confluent Cloud
 
 ![CC](../00-images/cc7.png)  
 
@@ -40,8 +40,12 @@ If you are a GCP CE, use your @google.com address and not Argolis email.
 ![CC](../00-images/cc8.png)  
 
 
+<hr>
 
-## N. Install Confluent Cloud client on gcloud
+## 2. Install Confluent Cloud client on gcloud
+
+1. Na
+
 
 ### N1. Download and install the latest version in the default directory, ./bin:
 ```
