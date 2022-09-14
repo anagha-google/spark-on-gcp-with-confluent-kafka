@@ -273,13 +273,13 @@ confluent api-key use $GAIA_CLUSTER_USERNAME --resource $GAIA_CLUSTER_ID
 5.4. Grab the bootstrap server list
 
 ```
-export GAIA_CLUSTER_BOOTSTRAP_SERVERS=`confluent kafka cluster describe $GAIA_CLUSTERCLUSTER_ID -ojson | jq -r '.endpoint'`
+export GAIA_CLUSTER_BOOTSTRAP_SERVERS=`confluent kafka cluster describe $GAIA_CLUSTER_ID -ojson | jq -r '.endpoint' | cut -d'/' -f3`
 ```
 
 Author's bootstrap servers-
 ```
 echo $GAIA_CLUSTER_BOOTSTRAP_SERVERS
-SASL_SSL://pkc-3xxxw.us-central1.gcp.confluent.cloud:9092
+pkc-3xxxw.us-central1.gcp.confluent.cloud:9092
 ```
 
 5.5. The configuration
@@ -299,8 +299,8 @@ topic=contest-entries
 bootstrap.servers=SASL_SSL://pkc-3xxxw.us-central1.gcp.confluent.cloud:9092
 security.protocol=SASL_SSL
 sasl.mechanisms=PLAIN
-sasl.username=4E7xxxS4TKY
-sasl.password=rOUAo4+1qedIHiUWf7r-------xxx??Hello----iWVi
+sasl.username=4E7_HOWDY_DO_S4TKY
+sasl.password=rOUAo4+1q_HA_HA_NO_WAYtlhRLlcRiWVi
 ```
 
 <hr>
@@ -317,18 +317,50 @@ This is needed by both the Kafka producer (Python message generator) and Kafka c
 
 7.1. Navigate to the configuration directory
 
-
+```
+cd ~/spark-on-gcp-with-confluent-kafka/03-configuration
+```
 
 7.2. View the config file as it stands
 
-7.3. Run these updates to the config file
+```
+cat gaia.conf
+```
+
+Author's output-
+```
+# Kafka
+bootstrap.servers=YOUR_BOOTSTRAP_SERVER
+security.protocol=SASL_SSL
+sasl.mechanisms=PLAIN
+sasl.username=YOUR_USERNAME
+sasl.password=YOUR_PASSWORD
+```
+
+7.3. Update the config file with your Kafka details
+
+```
+sed -i s/YOUR_BOOTSTRAP_SERVER/$GAIA_CLUSTER_BOOTSTRAP_SERVER/g gaia.conf
+sed -i s/YOUR_USERNAME/$GAIA_CLUSTER_USERNAME/g gaia.conf
+sed -i s/YOUR_PASSWORD/$GAIA_CLUSTER_PASSWORD/g gaia.conf
+```
 
 
+7.4. View the config file as it stands
 
+```
+cat gaia.conf
+```
 
-
-
-
+Author's output-
+```
+# Kafka
+bootstrap.servers=
+security.protocol=SASL_SSL
+sasl.mechanisms=PLAIN
+sasl.username=4E7_HOWDY_DO_S4TKY
+sasl.password=rOUAo4+1q_HA_HA_NO_WAYtlhRLlcRiWVi
+```
 
 <br>
 
