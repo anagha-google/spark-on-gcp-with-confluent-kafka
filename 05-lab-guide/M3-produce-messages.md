@@ -79,13 +79,11 @@ Produced record to topic contest-entries partition [0] @ offset 3403
 <br><br>
 
 
-## 3. Review a payload to understand the construct
+## 3. Review a message closely to understand the construct
 
 ```
 {"email": "joebelanger17@yahoo.com", "name": "Joe Belanger", "entry_time": 1663206958.919104, "day": "20220915", "participationnumber": 19500}
 ```
-
-
 
 
 <hr>
