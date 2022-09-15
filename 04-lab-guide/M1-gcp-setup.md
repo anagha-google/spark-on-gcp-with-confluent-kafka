@@ -174,7 +174,7 @@ Needs to run in cloud shell from ~/next22/spark-on-gcp-with-confluent-kafka/01-e
 <hr>
 
 ## 6. What's in the next module
-In the [next module](../05-lab-guide/M2-confluent-kafka-setup.md), we will create and configure the Confluent Cloud Kafka environment for the lab.
+In the [next module](../04-lab-guide/M2-confluent-kafka-setup.md), we will create and configure the Confluent Cloud Kafka environment for the lab.
 <hr>
 
 
