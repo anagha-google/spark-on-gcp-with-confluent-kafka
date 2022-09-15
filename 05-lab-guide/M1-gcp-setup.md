@@ -17,6 +17,10 @@ TODO
 ## Pictorial walkthrough of services provisioned & customization
 The author's environment is showcased [here](../05-lab-guide/Services-Created.md)
 
+
+TODO
+
+
 <hr>
 
 ## 2. Create the environment
@@ -107,6 +111,10 @@ terraform apply \
 
 ## 3. Validate your Terraform deployment against a pictorial overview of services provisioned & customization
 Available [here]
+
+
+TODO
+
 
 <hr>
 
