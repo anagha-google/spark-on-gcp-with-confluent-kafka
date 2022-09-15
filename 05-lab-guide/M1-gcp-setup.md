@@ -1,7 +1,7 @@
 
 # About
 This module covers GCP Spark environment provisioning for the workshop. This module including the environment provisioning takes ~15 minutes to complete. 
-<br><br>
+
 ## Note:
 1. **Ensure services in use in the workshop are available in the location of your preference** and modify the variables in step 2.4.1 to reflect the same.
 2. Get any preview services **allow-listed**
