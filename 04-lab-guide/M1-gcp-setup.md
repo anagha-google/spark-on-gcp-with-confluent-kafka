@@ -173,7 +173,16 @@ Needs to run in cloud shell from ~/next22/spark-on-gcp-with-confluent-kafka/01-e
 
 <hr>
 
-## 6. What's in the next module
+## 6. Load data into the promotions table in BigQuery
+Run the below in Cloud Shell
+```
+bq query --use_legacy_sql=false 'DELETE FROM marketing_ds.promotions WHERE 0=0;'
+bq query --use_legacy_sql=false 'INSERT INTO marketing_ds.promotions(day,promotion,participation_number)VALUES(FORMAT_DATE("%G%m%d",current_date()),"5 day cruise to Alaska","5");'
+bq query --use_legacy_sql=false 'INSERT INTO marketing_ds.promotions(day,promotion,participation_number)VALUES(FORMAT_DATE("%G%m%d",current_date()),"14 day hiking trip to Kilimanjaro, Tanzania","13");'
+bq query --use_legacy_sql=false 'INSERT INTO marketing_ds.promotions(day,promotion,participation_number)VALUES(FORMAT_DATE("%G%m%d",current_date()),"A week in Cambodia","21");'
+```
+
+## 7. What's in the next module
 In the [next module](../04-lab-guide/M2-confluent-kafka-setup.md), we will create and configure the Confluent Cloud Kafka environment for the lab.
 <hr>
 
