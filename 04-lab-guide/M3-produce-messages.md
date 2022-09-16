@@ -32,7 +32,7 @@ TOPIC_NM=contest-entries
 
 1.5. Launch the producer
 ```
-python producer.py -f ../03-configuration/gaia.conf -t $TOPIC_NM -m 1000000000
+python producer.py -f ../../../03-configuration/gaia.conf -t $TOPIC_NM -m 1000000000
 ```
 
 Sampler output to console
