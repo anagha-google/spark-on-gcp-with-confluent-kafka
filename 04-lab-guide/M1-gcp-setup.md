@@ -118,22 +118,31 @@ TODO
 
 <hr>
 
-## 4. Glitches/nuances to be mindful of
+## 4. Load data into the promotions table in BigQuery
+Run the below in Cloud Shell
+```
+bq query --use_legacy_sql=false 'DELETE FROM marketing_ds.promotions WHERE 0=0;'
+bq query --use_legacy_sql=false 'INSERT INTO marketing_ds.promotions(day,promotion,participation_number)VALUES(FORMAT_DATE("%G%m%d",current_date()),"5 day cruise to Alaska","5");'
+bq query --use_legacy_sql=false 'INSERT INTO marketing_ds.promotions(day,promotion,participation_number)VALUES(FORMAT_DATE("%G%m%d",current_date()),"14 day hiking trip to Kilimanjaro, Tanzania","13");'
+bq query --use_legacy_sql=false 'INSERT INTO marketing_ds.promotions(day,promotion,participation_number)VALUES(FORMAT_DATE("%G%m%d",current_date()),"A week in Cambodia","21");'
+```
+
+## 5. Glitches/nuances to be mindful of
 
 
-**4.1. Managed Notebook Instance on Vertex AI Workbench**<br>
+**5.1. Managed Notebook Instance on Vertex AI Workbench**<br>
 Changing ownership of notebooks (uploaded to /home/jupyter via Terrafrom) from owner root to jupyter:jupyter does not work currently as part of Terraform deployment.<br>
 Workaround: Clone the notebook and save.
 
-**4.2. Persistent Spark History Server (PHS)**<br>
+**5.2. Persistent Spark History Server (PHS)**<br>
 If you edit the Terraform and run apply, PHS gets destroyed and recreated. <br>
 Workaround: Not applicable. It just takes 90 seconds or less to destroy and 90 seconds to recreate.
 
 <hr>
 
-## 5. Terraform How-Tos [DO NOT RUN THIS, ITS JUST FYI]
+## 6. Terraform How-Tos [DO NOT RUN THIS, ITS JUST FYI]
 
-### 5.1. For selective replacement of specific services/units of deployment [DO NOT RUN THIS, ITS JUST FYI]
+### 6.1. For selective replacement of specific services/units of deployment [DO NOT RUN THIS, ITS JUST FYI]
 
 This is not needed...and is informational only.<br>
 Needs to run in cloud shell from ~/next22/spark-on-gcp-with-confluent-kafka/01-environment-setup
@@ -152,7 +161,7 @@ If -target does not work, try -replace
   --auto-approve
 ```
 
-### 5.2. To destroy the deployment [DO NOT RUN THIS, ITS JUST FYI]
+### 6.2. To destroy the deployment [DO NOT RUN THIS, ITS JUST FYI]
 
 You can (a) shutdown the project altogether in GCP Cloud Console or (b) use Terraform to destroy. Use (b) at your own risk as its a little glitchy while (a) is guaranteed to stop the billing meter pronto.
 <br>
@@ -173,14 +182,7 @@ Needs to run in cloud shell from ~/next22/spark-on-gcp-with-confluent-kafka/01-e
 
 <hr>
 
-## 6. Load data into the promotions table in BigQuery
-Run the below in Cloud Shell
-```
-bq query --use_legacy_sql=false 'DELETE FROM marketing_ds.promotions WHERE 0=0;'
-bq query --use_legacy_sql=false 'INSERT INTO marketing_ds.promotions(day,promotion,participation_number)VALUES(FORMAT_DATE("%G%m%d",current_date()),"5 day cruise to Alaska","5");'
-bq query --use_legacy_sql=false 'INSERT INTO marketing_ds.promotions(day,promotion,participation_number)VALUES(FORMAT_DATE("%G%m%d",current_date()),"14 day hiking trip to Kilimanjaro, Tanzania","13");'
-bq query --use_legacy_sql=false 'INSERT INTO marketing_ds.promotions(day,promotion,participation_number)VALUES(FORMAT_DATE("%G%m%d",current_date()),"A week in Cambodia","21");'
-```
+
 
 ## 7. What's in the next module
 In the [next module](../04-lab-guide/M2-confluent-kafka-setup.md), we will create and configure the Confluent Cloud Kafka environment for the lab.
