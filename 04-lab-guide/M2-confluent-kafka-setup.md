@@ -229,7 +229,7 @@ Set Kafka cluster "lkc-w732yj" as the active cluster for environment "env-12kmy5
 
 4.4. Create topic
 ```
-TOPIC_NM=contest-entries
+TOPIC_NM=ccampaign_entries
 confluent kafka topic create $TOPIC_NM --cluster $GAIA_CLUSTER_ID
 ```
 More topic operations can be found in the [Confluent docs](https://docs.confluent.io/cloud/current/client-apps/topics/manage.html#edit-a-topic).
