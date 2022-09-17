@@ -306,7 +306,7 @@ echo sasl.password=$GAIA_CLUSTER_PASSWORD
 
 Author's output-
 ```
-topic=contest-entries
+topic=entries
 bootstrap.servers=SASL_SSL://pkc-3xxxw.us-central1.gcp.confluent.cloud:9092
 security.protocol=SASL_SSL
 sasl.mechanisms=PLAIN
