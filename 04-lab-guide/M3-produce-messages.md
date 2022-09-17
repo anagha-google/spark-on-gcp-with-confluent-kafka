@@ -57,11 +57,13 @@ Produced record to topic contest-entries partition [0] @ offset 3403
 
 ## 2. Validate from Confluent UI
 
+![CC](../00-images/cc25.png) 
+<br><br>
+
 ![CC](../00-images/cc24.png) 
 <br><br>
 
-![CC](../00-images/cc25.png) 
-<br><br>
+
 
 ![CC](../00-images/cc26.png) 
 <br><br>
