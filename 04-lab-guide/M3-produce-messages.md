@@ -7,35 +7,35 @@ Successful completion of the prior module
 
 ## 1. Run the producer from Cloud Shell
 
-1.1. Create the Python venv
+### 1.1. Create the Python venv
 ```
 cd $CONFLUENT_HOME
 virtualenv gaia-venv
 source ./gaia-venv/bin/activate
 ```
 
-1.2. Install the requirements for the producer
+### 1.2. Install the requirements for the producer
 ```
 pip install -r ~/spark-on-gcp-with-confluent-kafka/02-scripts/python/producer/requirements.txt
 ```
 
-1.3. Navigate to the producer code
+### 1.3. Navigate to the producer code
 ```
 cd ~/spark-on-gcp-with-confluent-kafka/02-scripts/python/producer
 ```
 
-1.4. Varibles needed for the producer
+### 1.4. Varibles needed for the producer
 
 ```
-TOPIC_NM=contest-entries
+TOPIC_NM=entries
 ```
 
-1.5. Launch the producer
+### 1.5. Launch the producer
 ```
 python producer.py -f ../../../03-configuration/gaia.conf -t $TOPIC_NM -m 1000000000
 ```
 
-Sampler output to console
+### 1.6. Sample output to console
 ```
 Producing record: 20220915_19497        {"email": "edwardklare52@mail.kz", "name": "Edward Klare", "entry_time": 1663206958.9132204, "day": "20220915", "participationnumber": 19497}
 Produced record to topic contest-entries partition [2] @ offset 3482
