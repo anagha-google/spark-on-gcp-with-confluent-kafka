@@ -80,6 +80,7 @@ Produced record to topic contest-entries partition [0] @ offset 3403
 ![CC](../00-images/cc30.png) 
 <br><br>
 
+<hr>
 
 ## 3. Review a message closely to understand the construct
 
@@ -89,4 +90,5 @@ Produced record to topic contest-entries partition [0] @ offset 3403
 
 
 <hr>
+<br>
 This concludes the module. Please proceed to the next module.
