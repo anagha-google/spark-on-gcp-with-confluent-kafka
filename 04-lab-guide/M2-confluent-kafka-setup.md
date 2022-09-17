@@ -251,6 +251,17 @@ confluent kafka topic list --cluster $GAIA_CLUSTER_ID
 
 <br><br>
 
+
+![CC](../00-images/cc24.2.png)  
+
+<br><br>
+
+
+
+![CC](../00-images/cc24.3.png)  
+
+<br><br>
+
 <hr>
 
 ## 5. Configuration we need to publish to Kafka and consume from Kafka
