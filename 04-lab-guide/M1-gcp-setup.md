@@ -148,7 +148,7 @@ This is not needed...and is informational only.<br>
 Needs to run in cloud shell from ~/next22/spark-on-gcp-with-confluent-kafka/01-environment-setup
 If -target does not work, try -replace
 ```
-#terraform apply -target=null_resource.custom_container_image_creation \
+#terraform apply -replace=null_resource.custom_container_image_creation \
 -var="project_id=${PROJECT_ID}" \
   -var="project_name=${PROJECT_NAME}" \
   -var="project_number=${PROJECT_NBR}" \
