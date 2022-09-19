@@ -79,7 +79,7 @@ finalDF=parsedDF.toDF("email","name","entry_time","day","participation_number")
 spark.conf.set("parentProject", projectID)
 spark.conf.set("temporaryGcsBucket",bqScratchBucket)
 
-# Process the stream from Kafka
+# Process the stream from Kafka into a precreated BigQuery table in append mode
 queryDF=finalDF.writeStream.format("bigquery").outputMode("append").option("table", bqTableFQN).option("checkpointLocation", checkpointGCSUri).start()
 
 # Terminate gracefully 
