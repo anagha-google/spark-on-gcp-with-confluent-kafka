@@ -1,9 +1,9 @@
 from pyspark.sql import SparkSession
+from pyspark.sql.types import StructType,StructField, StringType,IntegerType,LongType
+from pyspark.sql.functions import col,from_json
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
 import sys
-from pyspark.sql.types import StructType,StructField, StringType,IntegerType
-from pyspark.sql.functions import col,from_json
 
 # Arguments
 kafkaBrokerAndPortCSV=sys.argv[1]
