@@ -13,9 +13,7 @@ projectID=sys.argv[4]
 bqScratchBucket=sys.argv[5]
 checkpointGCSUri=sys.argv[6]
 bqTableFQN=sys.argv[7]
-bqJarGCSUri=sys.argv[8]
-sparkJarsPackages=sys.argv[9]
-printArguments=sys.argv[10]
+printArguments=sys.argv[8]
 
 # Variables
 kafkaJaasConfig="org.apache.kafka.common.security.plain.PlainLoginModule required username=\"" + kafkaAPIKey + "\" password=\"" + kafkaAPISecret + "\";"
@@ -30,8 +28,6 @@ if printArguments:
     print(f"bqScratchBucket={bqScratchBucket}")
     print(f"checkpointGCSUri={checkpointGCSUri}")
     print(f"bqTableFQN={bqTableFQN}")
-    print(f"bqJarGCSUri={bqJarGCSUri}")
-    print(f"sparkJarsPackages={sparkJarsPackages}")
     print("kafka.sasl.jaas.config="+kafkaJaasConfig)
 #}}
 
@@ -41,10 +37,11 @@ spark = SparkSession \
         .appName("entries-consumer") \
         .config("spark.streaming.stopGracefullyOnShutdown", "true") \
         .config("spark.sql.streaming.schemaInference", "true") \
-        .config("spark.jars", bqJarGCSUri) \
-		.config("spark.jars.packages",sparkJarsPackages) \
         .getOrCreate()
 
+        
+#       .config("spark.jars", bqJarGCSUri) \
+#        .config("spark.jars.packages","com.google.cloud.spark:spark-bigquery-with-dependencies_2.12:0.22.2,org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.1") \
 
 # Variables
 kafkaTopic="entries"

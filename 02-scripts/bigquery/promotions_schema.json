@@ -1,0 +1,17 @@
+[
+  {
+    "name": "day",
+    "type": "STRING",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "promotion",
+    "type": "STRING",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "participation_number",
+    "type": "INTEGER",
+    "mode": "REQUIRED"
+  }
+]

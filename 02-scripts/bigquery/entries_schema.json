@@ -1,0 +1,29 @@
+[
+  {
+    "name": "email",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "email"
+  },
+  {
+    "name": "name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "name"
+  },
+  {
+    "name": "entry_time",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "day",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "participation_number",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
+]
