@@ -83,8 +83,13 @@ SELECT * FROM marketing_ds.entries LIMIT 1000
 To avoid charges, stop the streaming job. 
 1. First hit control+c from the keyboard to exit out of the gcloud command running the streaming job
 2. Next, issue a kill from the CLI
+
+```
+gcloud dataproc batches cancel  YOUR_SPARK_BATCH_ID_TO_KILL --region=us-central1
+```
 <br>
 E.g. If you have a job called entries-kafka-consumer-streaming-15789 in us-central1, run the below
+
 ```
 gcloud dataproc batches cancel  entries-kafka-consumer-streaming-15789 --region=us-central1
 ```
