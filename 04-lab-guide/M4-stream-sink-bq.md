@@ -10,10 +10,13 @@ Dataproc Serverless Spark Batches Runtime: 1.0.15<br>
 
 ### Jar location:
 1. BigQuery connector: gs://spark-lib/bigquery/spark-bigquery-with-dependencies_2.12-0.22.2.jar
-2. Kafka connector: Downloaded from Maven and persisted in GCS; This is setup already for you as part of the Terraform setup in Module 1
+2. Kafka connector: Downloaded from Maven and persisted in GCS - part of Terraform in module 1
+
 
 ### Resources:
 1. Dataproc https://cloud.google.com/dataproc-serverless/docs/concepts/versions/spark-runtime-versions
+2. Spark and Kafka: https://spark.apache.org/docs/latest/structured-streaming-kafka-integration.html
+3. Spark and BigQuery: https://cloud.google.com/dataproc/docs/tutorials/bigquery-connector-spark-example
 
  <hr>
 
