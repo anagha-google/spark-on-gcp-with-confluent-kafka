@@ -41,7 +41,6 @@ spark = SparkSession \
 		.config("spark.jars.packages","com.google.cloud.spark:spark-bigquery-with-dependencies_2.12:0.25.2,org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.1") \
         .getOrCreate()
 
-print("spark_version=" + spark.version)
 
 # Variables
 kafkaTopic="entries"
@@ -66,8 +65,8 @@ schema = StructType([
     StructField("email",StringType(),True), 
     StructField("name",StringType(),True), 
     StructField("entry_time",StringType(),True), 
-    StructField("day", StringType(), True),
-    StructField("participationnumber", IntegerType(), True)
+    StructField("day", StringType(),True), 
+    StructField("participationnumber", IntegerType(),True)
   ])
 
 # Parse the JSON payload into individual columns
