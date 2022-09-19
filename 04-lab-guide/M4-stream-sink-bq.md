@@ -8,17 +8,16 @@ In the prior module we learned to send messages to a Kafka topic. Start the prod
 
 ## 2. Declare variables
 
-Paste the below in Cloud Shell-<br>
-Replace with your region and Kafka details.
+### 2.1. Your custom variables
+Replace the variables below with your region and Kafka details, and paste in Cloud Shell-
 ```
 YOUR_GCP_REGION="us-central1"
 KAFKA_BOOTSTRAP_SERVERS="YOUR_KAFKA_BOOTSTRAP_SERVERS"
 KAFKA_API_KEY="YOUR_KAFKA_API_KEY" 
 KAFKA_API_SECRET="YOUR_KAFKA_API_SECRET"
-
 ```
 
-Then the rest-
+### 2.2. Other variables
 ```
 PROJECT_ID=`gcloud config list --format "value(core.project)" 2>/dev/null`
 PROJECT_NBR=`gcloud projects describe $PROJECT_ID | grep projectNumber | cut -d':' -f2 |  tr -d "'" | xargs`
@@ -34,7 +33,7 @@ KAFKA_CONNECTOR_JAR_GCS_URI="gs://s8s-spark-jars-bucket-541847919356/spark-sql-k
 BQ_CONNECTOR_JAR_GCS_URI="gs://spark-lib/bigquery/spark-bigquery-with-dependencies_2.12-0.22.2.jar"
 ```
 
-## 3. Start the consumer
+## 3. Start the Kafka consumer application
 ```
 gcloud dataproc batches submit \
   pyspark --batch $STREAMING_JOB_NM-streaming-${RANDOM} \
@@ -49,6 +48,12 @@ gcloud dataproc batches submit \
   --properties "spark.jars.packages=org.apache.spark:spark-streaming-kafka-0-10_2.13:3.1.2"
   -- $KAFKA_BOOTSTRAP_SERVERS $KAFKA_API_KEY $KAFKA_API_SECRET $PROJECT_ID $BQ_SCRATCH_BUCKET $CHECKPOINT_BUCKET_URI $BQ_SINK_FQN 
  ```
+
+ <hr>
+ 
+ ## 4. Monitor the Kafka consumer Spark application in the Dataproc Batches UI on Cloud Console 
+ 
+ <br>
  
  <hr>
 
