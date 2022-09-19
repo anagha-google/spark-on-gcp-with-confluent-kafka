@@ -53,4 +53,14 @@ SELECT * FROM marketing_ds.entries LIMIT 1000
 
 <hr>
 
+## 5. Stop your streaming job
+
+To avoid charges, stop the streaming job. 
+1. First hit control+c from the keyboard to exit out of the gcloud command running the streaming job
+2. Next, issue a kill from the CLI
+E.g.
+```
+gcloud dataproc batches cancel  entries-kafka-consumer-streaming-15789 --region=us-central1
+```
+<hr>
 This concludes the module, proceed to the next module that covers joining a stream to static data.
