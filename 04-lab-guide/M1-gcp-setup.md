@@ -104,7 +104,8 @@ terraform apply \
   -var="gcp_region=${YOUR_GCP_REGION}" \
   -var="gcp_zone=${YOUR_GCP_ZONE}" \
   -var="gcp_multi_region=${YOUR_GCP_MULTI_REGION}" \
-  -var="bq_connector_jar_gcs_uri=${BQ_CONNECTOR_JAR_GCS_URI}" 
+  -var="bq_connector_jar_gcs_uri=${BQ_CONNECTOR_JAR_GCS_URI}" \
+  --auto-approve
 ```
 
 <hr>
