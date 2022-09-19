@@ -67,6 +67,19 @@ gcloud dataproc batches submit \
  
  <br>
  
+ 
+![DP](../00-images/module4-01.png) 
+ <br><br>
+ 
+![DP](../00-images/module4-02.png) 
+ <br><br>
+ 
+![DP](../00-images/module4-03.png) 
+ <br><br>
+ 
+![DP](../00-images/module4-04.png) 
+ <br><br>
+ 
  <hr>
 
 ## 4. Validate entries in BigQuery UI
@@ -75,6 +88,9 @@ You should see properly parsed events in BigQuery-
 ```
 SELECT * FROM marketing_ds.entries LIMIT 1000
 ```
+
+![DP](../00-images/module4-05.png) 
+ <br><br>
 
 <hr>
 
