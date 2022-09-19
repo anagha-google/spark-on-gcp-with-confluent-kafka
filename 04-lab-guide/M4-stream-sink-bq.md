@@ -2,11 +2,17 @@
 
 This module demonstrates (embarassingly) basic integration from Kafka to BigQuery using Apache Spark connectors for Kafka and BigQuery. Such an integration is ideal if you want to consume from Kafka and into BigQuery, but dont have a low latency requirement.
 
+ <hr>
+
 ## 1. Start the producer
 
-In the prior module we learned to send messages to a Kafka topic. Start the producer as detailed in the prior module, unless its already running.
+In the prior module we learned to send messages to a Kafka topic. Start the producer in a Cloud shell terminal window as detailed in the prior module, unless its already running.
+
+ <hr>
 
 ## 2. Declare variables
+
+If you have the producer running, open a new terminal tab in Cloud shell and paste the variables. Its important to be in the right project, as you run this module.
 
 ### 2.1. Your custom variables
 Replace the variables below with your region and Kafka details, and paste in Cloud Shell-
@@ -16,7 +22,8 @@ KAFKA_BOOTSTRAP_SERVERS="YOUR_KAFKA_BOOTSTRAP_SERVERS"
 KAFKA_API_KEY="YOUR_KAFKA_API_KEY" 
 KAFKA_API_SECRET="YOUR_KAFKA_API_SECRET"
 ```
-
+ <hr>
+ 
 ### 2.2. Other variables
 ```
 PROJECT_ID=`gcloud config list --format "value(core.project)" 2>/dev/null`
@@ -29,24 +36,29 @@ CHECKPOINT_BUCKET_URI="gs://s8s-spark-checkpoint-bucket-${PROJECT_NBR}/entries_c
 CODE_BUCKET_URI="gs://s8s-code-bucket-${PROJECT_NBR}"
 BQ_SINK_FQN="marketing_ds.entries"
 STREAMING_JOB_NM="entries-kafka-consumer"
-KAFKA_CONNECTOR_JAR_GCS_URI="gs://s8s-spark-jars-bucket-541847919356/spark-sql-kafka-0-10_2.12-3.2.1.jar"
+KAFKA_CONNECTOR_JAR_GCS_URI="gs://s8s-spark-jars-bucket-${PROJECT_NBR}/spark-sql-kafka-0-10_2.12-3.2.1.jar"
+KAFKA_PACKAGE_COORDS="org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.1"
 BQ_CONNECTOR_JAR_GCS_URI="gs://spark-lib/bigquery/spark-bigquery-with-dependencies_2.12-0.22.2.jar"
+SPARK_PACKAGE_COORDS="com.google.cloud.spark:spark-bigquery-with-dependencies_2.12:0.22.2,${KAFKA_PACKAGE_COORDS}"
 ```
+ <hr>
 
 ## 3. Start the Kafka consumer application
 ```
 gcloud dataproc batches submit \
-  pyspark --batch $STREAMING_JOB_NM-streaming-${RANDOM} \
-  $CODE_BUCKET_URI/entries-consumer.py  \
+  pyspark $CODE_BUCKET_URI/entries-consumer.py  \
+  --batch $STREAMING_JOB_NM-streaming-${RANDOM} \
   --deps-bucket $CODE_BUCKET_URI \
   --project $PROJECT_ID \
   --region $YOUR_GCP_REGION \
   --subnet $SPARK_SERVERLESS_SUBNET \
   --service-account $UMSA_FQN \
   --history-server-cluster projects/$PROJECT_ID/regions/$YOUR_GCP_REGION/clusters/$PERSISTENT_HISTORY_SERVER_NM \
-  --jars "${KAFKA_CONNECTOR_JAR_GCS_URI},${BQ_CONNECTOR_JAR_GCS_URI}" \
-  --properties "spark.jars.packages=org.apache.spark:spark-streaming-kafka-0-10_2.13:3.1.2"
-  -- $KAFKA_BOOTSTRAP_SERVERS $KAFKA_API_KEY $KAFKA_API_SECRET $PROJECT_ID $BQ_SCRATCH_BUCKET $CHECKPOINT_BUCKET_URI $BQ_SINK_FQN 
+  --properties "spark.dynamicAllocation.enabled=false,spark.jars.packages=$KAFKA_PACKAGE_COORDS" \
+  --jars $BQ_CONNECTOR_JAR_GCS_URI,$KAFKA_CONNECTOR_JAR_GCS_URI \
+  --version 1.0.15 \
+  -- $KAFKA_BOOTSTRAP_SERVERS $KAFKA_API_KEY $KAFKA_API_SECRET $PROJECT_ID $BQ_SCRATCH_BUCKET $CHECKPOINT_BUCKET_URI $BQ_SINK_FQN true
+
  ```
 
  <hr>
