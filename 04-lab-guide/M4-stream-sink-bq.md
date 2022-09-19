@@ -7,6 +7,18 @@ This module demonstrates (embarassingly) basic integration from Kafka to BigQuer
 In the prior module we learned to send messages to a Kafka topic. Start the producer as detailed in the prior module, unless its already running.
 
 ## 2. Declare variables
+
+Paste the below in Cloud Shell-<br>
+Replace with your region and Kafka details.
+```
+YOUR_GCP_REGION="us-central1"
+KAFKA_BOOTSTRAP_SERVERS="YOUR_KAFKA_BOOTSTRAP_SERVERS"
+KAFKA_API_KEY="YOUR_KAFKA_API_KEY" 
+KAFKA_API_SECRET="YOUR_KAFKA_API_SECRET"
+
+```
+
+Then the rest-
 ```
 PROJECT_ID=`gcloud config list --format "value(core.project)" 2>/dev/null`
 PROJECT_NBR=`gcloud projects describe $PROJECT_ID | grep projectNumber | cut -d':' -f2 |  tr -d "'" | xargs`
@@ -20,10 +32,6 @@ BQ_SINK_FQN="marketing_ds.entries"
 STREAMING_JOB_NM="entries-kafka-consumer"
 KAFKA_CONNECTOR_JAR_GCS_URI="gs://s8s-spark-jars-bucket-541847919356/spark-sql-kafka-0-10_2.12-3.2.1.jar"
 BQ_CONNECTOR_JAR_GCS_URI="gs://spark-lib/bigquery/spark-bigquery-with-dependencies_2.12-0.22.2.jar"
-YOUR_GCP_REGION="us-central1"
-KAFKA_BOOTSTRAP_SERVERS="YOUR_KAFKA_BOOTSTRAP_SERVERS"
-KAFKA_API_KEY="YOUR_KAFKA_API_KEY" 
-KAFKA_API_SECRET="YOUR_KAFKA_API_SECRET"
 ```
 
 ## 3. Start the consumer
