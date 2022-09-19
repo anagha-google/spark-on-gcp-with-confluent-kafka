@@ -342,18 +342,35 @@ resource "google_compute_firewall" "allow_intra_snet_ingress_to_any" {
   ]
 }
 
-resource "google_compute_firewall" "allow_egress_to_confluent_cloud" {
-  project   = local.project_id 
-  name      = "allow-egress-to-confluent-cloud"
-  network   = local.vpc_nm
-  direction = "EGRESS"
-  destination_ranges = ["0.0.0.0/0"]
-  allow {
-    protocol = "all"
+resource "google_compute_router" "router_creation" {
+  name    = "s8s-spark-router"
+  region  = local.location
+  network = local.vpc_nm
+
+  bgp {
+    asn = 64514
   }
-  description        = "Creates firewall rule to allow ingress from within Spark subnet on all ports, all protocols"
   depends_on = [
     module.vpc_creation, 
+    module.administrator_role_grants
+  ]
+}
+
+resource "google_compute_router_nat" "nat_creation" {
+  name                               = "s8s-spark-nat"
+  router                             = google_compute_router.router_creation.name
+  region                             = local.location
+  nat_ip_allocate_option             = "AUTO_ONLY"
+  source_subnetwork_ip_ranges_to_nat = "ALL_SUBNETWORKS_ALL_IP_RANGES"
+
+  log_config {
+    enable = true
+    filter = "ERRORS_ONLY"
+  }
+
+  depends_on = [
+    module.vpc_creation, 
+    google_compute_router.router_creation,
     module.administrator_role_grants
   ]
 }
@@ -366,8 +383,7 @@ resource "time_sleep" "sleep_after_network_and_firewall_creation" {
   create_duration = "120s"
   depends_on = [
     module.vpc_creation,
-    google_compute_firewall.allow_intra_snet_ingress_to_any,
-    google_compute_firewall.allow_egress_to_confluent_cloud
+    google_compute_firewall.allow_intra_snet_ingress_to_any
   ]
 }
 
