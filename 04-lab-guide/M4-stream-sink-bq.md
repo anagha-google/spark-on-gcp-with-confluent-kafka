@@ -2,6 +2,19 @@
 
 This module demonstrates (embarassingly) basic integration from Kafka to BigQuery using Apache Spark connectors for Kafka and BigQuery. Such an integration is ideal if you want to consume from Kafka and into BigQuery, but dont have a low latency requirement.
 
+### Versions used:
+Spark 3.2.1 with Scala 2.12<br>
+Kafka connector class: org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.1<br>
+BigQuery connector class: com.google.cloud.spark:spark-bigquery-with-dependencies_2.12:0.22.2<br>
+Dataproc Serverless Spark Batches Runtime: 1.0.15<br>
+
+### Jar location:
+1. BigQuery connector: gs://spark-lib/bigquery/spark-bigquery-with-dependencies_2.12-0.22.2.jar
+2. Kafka connector: Downloaded from Maven and persisted in GCS; This is setup already for you as part of the Terraform setup in Module 1
+
+### Resources:
+1. Dataproc https://cloud.google.com/dataproc-serverless/docs/concepts/versions/spark-runtime-versions
+
  <hr>
 
 ## 1. Start the producer
