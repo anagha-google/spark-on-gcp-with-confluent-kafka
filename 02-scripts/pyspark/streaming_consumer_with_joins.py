@@ -84,7 +84,6 @@ entriesStreamingDF.show(2)
 
 # Inner join the stream with the static data to determine winners
 joinedDF=entriesStreamingDF.join(promotionsStaticDF, (entriesStreamingDF.day == promotionsStaticDF.day) & (entriesStreamingDF.participation_number == promotionsStaticDF.participation_number),"inner").drop(promotionsStaticDF.participation_number).drop(promotionsStaticDF.day)  
-joinedDF.show(2)
 
 # Process the stream joined with static data into a precreated BigQuery table in append mode
 queryDF=joinedDF.writeStream.format("bigquery").outputMode("append").option("table", bqWinnersTableFQN).option("checkpointLocation", checkpointGCSUri).start()
