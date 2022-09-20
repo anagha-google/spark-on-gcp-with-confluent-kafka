@@ -26,7 +26,7 @@ In the prior module we learned to send messages to a Kafka topic. Start the prod
 
  <hr>
 
-## 2. Declare variables
+## 2. Declare variables in Cloud Shell
 
 If you have the producer running, open a new terminal tab in Cloud shell and paste the variables. Its important to be in the right project, as you run this module.
 
@@ -61,7 +61,7 @@ KAFKA_TOPIC_NM="promotion_entries"
 ```
  <hr>
 
-## 3. Start the Kafka consumer application
+## 3. Start the Kafka consumer application in Cloud Shell
 ```
 gcloud dataproc batches submit \
   pyspark $CODE_BUCKET_URI/streaming_consumer_with_joins.py  \
