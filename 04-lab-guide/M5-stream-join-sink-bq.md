@@ -50,7 +50,8 @@ UMSA_FQN=s8s-lab-sa@$PROJECT_ID.iam.gserviceaccount.com
 BQ_SCRATCH_BUCKET="s8s-spark-bucket-${PROJECT_NBR}/bq/" 
 CHECKPOINT_BUCKET_URI="gs://s8s-spark-checkpoint-bucket-${PROJECT_NBR}/entries_consumer_checkpoint"
 CODE_BUCKET_URI="gs://s8s-code-bucket-${PROJECT_NBR}"
-BQ_SINK_FQN="marketing_ds.entries"
+BQ_SOURCE_FQN="marketing_ds.winners"
+BQ_SINK_FQN="marketing_ds.winners"
 STREAMING_JOB_NM="entries-kafka-consumer"
 KAFKA_CONNECTOR_JAR_GCS_URI="gs://s8s-spark-jars-bucket-${PROJECT_NBR}/spark-sql-kafka-0-10_2.12-3.2.1.jar"
 KAFKA_PACKAGE_COORDS="org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.1"
@@ -62,7 +63,7 @@ SPARK_PACKAGE_COORDS="com.google.cloud.spark:spark-bigquery-with-dependencies_2.
 ## 3. Start the Kafka consumer application
 ```
 gcloud dataproc batches submit \
-  pyspark $CODE_BUCKET_URI/entries-consumer.py  \
+  pyspark $CODE_BUCKET_URI/streaming_consumer_with_joins.py  \
   --batch $STREAMING_JOB_NM-streaming-${RANDOM} \
   --deps-bucket $CODE_BUCKET_URI \
   --project $PROJECT_ID \
@@ -73,7 +74,7 @@ gcloud dataproc batches submit \
   --properties "spark.dynamicAllocation.enabled=false,spark.jars.packages=$KAFKA_PACKAGE_COORDS" \
   --jars $BQ_CONNECTOR_JAR_GCS_URI,$KAFKA_CONNECTOR_JAR_GCS_URI \
   --version 1.0.15 \
-  -- $KAFKA_BOOTSTRAP_SERVERS $KAFKA_API_KEY $KAFKA_API_SECRET $PROJECT_ID $BQ_SCRATCH_BUCKET $CHECKPOINT_BUCKET_URI $BQ_SINK_FQN true
+  -- $KAFKA_BOOTSTRAP_SERVERS $KAFKA_API_KEY $KAFKA_API_SECRET $PROJECT_ID $BQ_SCRATCH_BUCKET $CHECKPOINT_BUCKET_URI $BQ_SOURCE_FQN $BQ_SINK_FQN true
  ```
 
  <hr>
@@ -83,13 +84,13 @@ gcloud dataproc batches submit \
  <br>
  
  
-![DP](../00-images/module4-01.png) 
+![DP](../00-images/module5-01.png) 
  <br><br>
  
-![DP](../00-images/module4-02.png) 
+![DP](../00-images/module5-02.png) 
  <br><br>
  
-![DP](../00-images/module4-03.png) 
+![DP](../00-images/module5-03.png) 
  <br><br>
 
  
@@ -99,10 +100,10 @@ gcloud dataproc batches submit \
 
 You should see properly parsed events in BigQuery with this-
 ```
-SELECT * FROM marketing_ds.entries LIMIT 1000
+SELECT * FROM marketing_ds.winners LIMIT 1000
 ```
 
-![DP](../00-images/module4-04.png) 
+![DP](../00-images/module4-05.png) 
  <br><br>
 
 <hr>
