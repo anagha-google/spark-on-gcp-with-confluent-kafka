@@ -576,6 +576,13 @@ resource "google_bigquery_table" "promotions_table_creation" {
   schema = "${file("../02-scripts/bigquery/promotions_schema.json")}"
 }
 
+resource "google_bigquery_table" "winners_table_creation" {
+  dataset_id = "${google_bigquery_dataset.bq_dataset_creation.dataset_id}"
+  table_id   = "winners"
+  deletion_protection = "false"
+  schema = "${file("../02-scripts/bigquery/winners_schema.json")}"
+}
+
 /******************************************
 Output variables
 ******************************************/
