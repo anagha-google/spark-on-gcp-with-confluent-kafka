@@ -51,19 +51,19 @@ spark.conf.set("temporaryGcsBucket",bqScratchBucket)
 promotionsDF = spark.read.format("bigquery").option("table",bqPromotionsTableFQN).load()
 
 # Read from Kafka topic
-promoEntriesDF = spark.readStream.format("kafka") \
+entriesRawDF = spark.readStream.format("kafka") \
     .option("kafka.bootstrap.servers", kafkaBrokerAndPortCSV) \
     .option("subscribe", kafkaTopic) \
     .option("kafka.security.protocol", "SASL_SSL") \
     .option("kafka.sasl.mechanism", "PLAIN") \
     .option("kafka.sasl.jaas.config", kafkaJaasConfig) \
-    .option("startingOffsets", "latest") \
+    .option("startingOffsets", "earliest") \
     .option("failOnDataLoss", "true") \
     .load()
 
 
 # Select key and payload and cast as string
-kvDF = promoEntriesDF.selectExpr("CAST(key AS STRING) as case_id", "CAST(value AS STRING) as json_payload")
+entriesKvDF = entriesRawDF.selectExpr("CAST(key AS STRING) as case_id", "CAST(value AS STRING) as json_payload")
 
 # Define schema for parsing payload
 schema = StructType([ 
@@ -75,13 +75,13 @@ schema = StructType([
   ])
 
 # Parse the JSON payload into individual columns
-parsedDF = kvDF.withColumn("jsonData",from_json(col("json_payload"),schema)).select("jsonData.*")
+entriesParsedDF = entriesKvDF.withColumn("jsonData",from_json(col("json_payload"),schema)).select("jsonData.*")
 
 # Rename columns 
-finalDF=parsedDF.toDF("email","name","entry_time","day","participation_number")
+entriesDF=entriesParsedDF.toDF("email","name","entry_time","day","participation_number")
 
 # Inner join the stream with the static data to determine winners
-joinedDF=finalDF.join(promotionsDF, (finalDF.day == promotionsDF.day) & (finalDF.participation_number == promotionsDF.participation_number),"inner").drop(promotionsDF.participation_number).drop(promotionsDF.day)  
+joinedDF=entriesDF.join(promotionsDF, (entriesDF.day == promotionsDF.day) & (entriesDF.participation_number == promotionsDF.participation_number),"inner").drop(promotionsDF.participation_number).drop(promotionsDF.day)  
 
 # Process the stream joined with static data into a precreated BigQuery table in append mode
 queryDF=joinedDF.writeStream.format("bigquery").outputMode("append").option("table", bqWinnersTableFQN).option("checkpointLocation", checkpointGCSUri).start()

@@ -49,7 +49,7 @@ promoEntriesDF = spark.readStream.format("kafka") \
     .option("kafka.security.protocol", "SASL_SSL") \
     .option("kafka.sasl.mechanism", "PLAIN") \
     .option("kafka.sasl.jaas.config", kafkaJaasConfig) \
-    .option("startingOffsets", "latest") \
+    .option("startingOffsets", "earliest") \
     .option("failOnDataLoss", "true") \
     .load()
 
