@@ -60,6 +60,7 @@ SPARK_PACKAGE_COORDS="com.google.cloud.spark:spark-bigquery-with-dependencies_2.
  <hr>
 
 ## 3. Start the Kafka consumer application
+
 ```
 gcloud dataproc batches submit \
   pyspark $CODE_BUCKET_URI/streaming_consumer_basic.py  \
