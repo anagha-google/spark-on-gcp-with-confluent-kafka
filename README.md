@@ -10,6 +10,7 @@
 
 ![LP](00-images/LP-Dev.png) 
 <br><br>
+Note: The above is not covered in the lab. The scripts are pre-created.
 
 ### 2.2. Solution Architecture
 
