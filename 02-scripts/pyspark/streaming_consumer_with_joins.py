@@ -80,7 +80,6 @@ entriesParsedStreamingDF = entriesKvStreamingDF.withColumn("jsonData",from_json(
 
 # Rename columns 
 entriesStreamingDF=entriesParsedStreamingDF.toDF("email","name","entry_time","day","participation_number")
-entriesStreamingDF.show(2)
 
 # Inner join the stream with the static data to determine winners
 joinedDF=entriesStreamingDF.join(promotionsStaticDF, (entriesStreamingDF.day == promotionsStaticDF.day) & (entriesStreamingDF.participation_number == promotionsStaticDF.participation_number),"inner").drop(promotionsStaticDF.participation_number).drop(promotionsStaticDF.day)  

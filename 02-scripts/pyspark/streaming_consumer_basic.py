@@ -9,11 +9,12 @@ import sys
 kafkaBrokerAndPortCSV=sys.argv[1]
 kafkaAPIKey=sys.argv[2]
 kafkaAPISecret=sys.argv[3]
-projectID=sys.argv[4]
-bqScratchBucket=sys.argv[5]
-checkpointGCSUri=sys.argv[6]
-bqTableFQN=sys.argv[7]
-printArguments=sys.argv[8]
+kafkaTopicNm=sys.argv[4]
+projectID=sys.argv[5]
+bqScratchBucket=sys.argv[6]
+checkpointGCSUri=sys.argv[7]
+bqTableFQN=sys.argv[8]
+printArguments=sys.argv[9]
 
 # Variables
 kafkaJaasConfig="org.apache.kafka.common.security.plain.PlainLoginModule required username=\"" + kafkaAPIKey + "\" password=\"" + kafkaAPISecret + "\";"
@@ -24,6 +25,7 @@ if printArguments:
     print(f"kafkaBrokerAndPortCSV={kafkaBrokerAndPortCSV}")
     print(f"kafkaAPIKey={kafkaAPIKey}")
     print(f"kafkaAPISecret={kafkaAPISecret}")
+    print(f"kafkaTopicNm={kafkaTopicNm}")
     print(f"projectID={projectID}")
     print(f"bqScratchBucket={bqScratchBucket}")
     print(f"checkpointGCSUri={checkpointGCSUri}")
@@ -45,7 +47,7 @@ kafkaTopic="entries"
 # Read from Kafka topic
 promoEntriesDF = spark.readStream.format("kafka") \
     .option("kafka.bootstrap.servers", kafkaBrokerAndPortCSV) \
-    .option("subscribe", kafkaTopic) \
+    .option("subscribe", kafkaTopicNm) \
     .option("kafka.security.protocol", "SASL_SSL") \
     .option("kafka.sasl.mechanism", "PLAIN") \
     .option("kafka.sasl.jaas.config", kafkaJaasConfig) \
