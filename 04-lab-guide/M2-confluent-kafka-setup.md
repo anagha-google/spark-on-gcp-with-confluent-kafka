@@ -111,9 +111,7 @@ confluent login
 
 ## 3. Create Confluent environment and cluster
 
-
-
-### 3.1. Create environment from confluent cli on cloud shell
+### 3.1. Create environment from confluent CLI on cloud shell
 
 ![CC](../00-images/M2-04.png) 
 <br><br>
