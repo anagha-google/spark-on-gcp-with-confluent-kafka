@@ -1,6 +1,6 @@
 # About
 
-This module covers how to publish messages to the Kafka topic using the (python) producer provided in the lab.
+This module covers how to publish messages from a Python script on Cloud Shell to the Kafka topic on Confluent, over the internet.
 
 ## Prerequisite
 Successful completion of the prior module
