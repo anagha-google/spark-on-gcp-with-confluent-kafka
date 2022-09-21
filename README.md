@@ -2,6 +2,28 @@
 
 ## 1. About 
 
+This repo is a hands-on lab for streaming from Kafka on Confluent Cloud and into BigQuery, with Apache Spark Structured Streaming on Dataproc Serverless Spark. It strives to demystify the products showcases and is less about building a perfect streaming application. It features a minimum viable example of joining a stream from Kafka with a static source in BigQuery, and sinking to BigQuery. 
+
+### Audience
+Data engineers
+
+### Prerequisites
+1. Access to Google Cloud and Confluent Kafka 
+2. Basic knowledge of Google Cloud services featured in the lab, Kafka and Spark is helpful
+
+### Duration
+1 hour from start to completion
+
+### Cost
+< $100
+
+### Goals
+
+1. Just enough knowlege of Confluent Kafka on GCP for streaming
+2. Just enough knowlege of Dataproc Serverless for Spark
+3. Just enough Terraform that can be repurposed for your use case 
+4. Quickstart code that can be repurposed for your use case  
+
 <hr>
 
 ## 2. Architecture
@@ -16,6 +38,8 @@ Note: The above is not covered in the lab. The scripts are pre-created.
 
 ![LP](00-images/LP-SolArch.png) 
 <br><br>
+
+<hr>
 
 ## 3. Use Case
 
@@ -40,6 +64,8 @@ The use case is basic sales and marketing campaign and promotion centric. Assume
 | Module 3 | [Publish events to Kafka](04-lab-guide/M3-produce-messages.md) |
 | Module 4 | [Spark Strctured Streaming Kafka consumer - basic](04-lab-guide/M4-stream-sink-bq.md) |
 | Module 5 | [Spark Strctured Streaming Kafka  consumer - join with static data](04-lab-guide/M5-stream-join-sink-bq.md) |
+
+<hr>
 
 ## 6. Remember...
 Shut down/delete resources when done to avoid unnecessary billing.
