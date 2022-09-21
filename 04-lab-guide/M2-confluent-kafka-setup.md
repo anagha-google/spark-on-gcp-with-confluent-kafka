@@ -2,13 +2,17 @@
 
 This module covers how to create your Confluent Cloud environmnent, cluster and topic for use in the lab.
 
-## What we will complete in this module
+## Steps in this module
 
 ![CC](../00-images/M2-01.png) 
 <br><br>
 
 ## 1. Provision Confluent Cloud from the GCP marketplace
 https://console.cloud.google.com/marketplace/product/endpoints/payg-prod.gcpmarketplace.confluent.cloud
+
+
+![CC](../00-images/M2-02.png) 
+<br><br>
 
 1.1. Search for Confluent Cloud
 
@@ -55,6 +59,9 @@ If you are a GCP CE, use your @google.com address and not Argolis email.
 <hr>
 
 ## 2. Install Confluent Cloud client on Cloud Shell
+
+![CC](../00-images/M2-03.png) 
+<br><br>
 
 2.1. Launch cloud shell
 
