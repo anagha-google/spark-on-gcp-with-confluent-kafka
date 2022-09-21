@@ -14,7 +14,7 @@ Note: The above is not covered in the lab. The scripts are pre-created.
 
 ### 2.2. Solution Architecture
 
-![LP](00-images/M5-00.png) 
+![LP](00-images/LP-SolArch.png) 
 <br><br>
 
 ## 3. Use case
