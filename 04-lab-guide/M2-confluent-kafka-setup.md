@@ -375,4 +375,4 @@ sasl.password=rOUAo4+1q_HA_HA_NO_WAYtlhRLlcRiWVi
 
 <br>
 
-This concludes the module. Please proceed to the next module.
+This concludes the module. Please proceed to the [next module](../04-lab-guide/M3-produce-messages.md) where you will learn to produce messages to Kafka.
