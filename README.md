@@ -67,7 +67,7 @@ The use case is basic sales and marketing campaign and promotion centric. Assume
 
 ## 5. Lab Modules
 
-| Module| Collaborators | 
+| #| Module | 
 | -- | :--- | 
 | Module 1 | [Provision Google Cloud environment with Terraform](04-lab-guide/M1-gcp-setup.md) | 
 | Module 2 | [Provision Confluent Cloud environment](04-lab-guide/M2-confluent-kafka-setup.md) |
