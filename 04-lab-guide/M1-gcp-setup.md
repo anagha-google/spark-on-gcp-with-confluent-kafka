@@ -27,9 +27,8 @@ The following services need to be created for the lab which are covered in the T
 | 4. | Cloud IAM | User Managed Service Account, IAM roles |
 | 5. | VPC | Network, Subnet |
 | 6. | Firewall | Rule to allow internode communication by Spark node roles |
-| 7. | Cloud Router<>Cloud NAT | Dataproc Serverless is a private setup and needs router and NAT setup to access Confluent Cloud over the internet |
-
-
+| 7. | Cloud Router<br>Cloud NAT | Dataproc Serverless is a private setup and needs router and NAT setup to access Confluent Cloud over the internet |
+| 8. | Cloud Storage | Pyspark scripts, Spark checkpoints, BQ Spark connector sratch bucket, and logs |
 
 <hr>
 
