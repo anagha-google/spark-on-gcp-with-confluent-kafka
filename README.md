@@ -6,9 +6,19 @@
 
 ## 2. Architecture
 
-<hr>
+### 2.1. Potential Development Environment
+
+![LP](00-images/LP-dev.png) 
+<br><br>
+
+### 2.2. Solution Architecture
+
+![LP](00-images/M5-00.png) 
+<br><br>
 
 ## 3. Use case
+
+The use case is basic sales and marketing campaign and promotion centric. Assume users logging on to a website and their data streamed to Kafka, and automatically entered into  promotions/lotto for a trip. 
 
 <hr>
 
