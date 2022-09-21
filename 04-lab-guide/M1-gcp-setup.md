@@ -168,9 +168,40 @@ terraform apply \
 ![M1](../00-images/M1-08.png) 
 <br><br>
 
-Available [here]
+![M1](../00-images/M1-08.png) 
+<br><br>
 
-TODO
+![M1](../00-images/M1-08.png) 
+<br><br>
+
+![M1](../00-images/M1-08.png) 
+<br><br>
+
+![M1](../00-images/M1-08.png) 
+<br><br>
+
+![M1](../00-images/M1-08.png) 
+<br><br>
+
+![M1](../00-images/M1-08.png) 
+<br><br>
+
+![M1](../00-images/M1-08.png) 
+<br><br>
+
+### 3.5. Dataproc Persistent Spark History Server
+
+![M1](../00-images/M1-16.png) 
+<br><br>
+
+
+![M1](../00-images/M1-17.png) 
+<br><br>
+
+![M1](../00-images/M1-18.png) 
+<br><br>
+
+
 
 <hr>
 
