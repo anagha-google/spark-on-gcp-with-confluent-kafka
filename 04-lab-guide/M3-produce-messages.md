@@ -91,4 +91,4 @@ Produced record to topic contest-entries partition [0] @ offset 3403
 
 <hr>
 <br>
-This concludes the module. Please proceed to the next module.
+This concludes the module. Please proceed to the [next module](../04-lab-guide/M4-stream-sink-bq.md) where you will learn to read streaming data in a Kafka topic, parse and sink to BigQuery as is.
