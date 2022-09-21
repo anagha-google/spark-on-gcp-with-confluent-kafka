@@ -22,10 +22,10 @@
 | Module| Collaborators | 
 | -- | :--- | 
 | Module 1 | [Provision Google Cloud environment with Terraform](04-lab-guide/M1-gcp-setup.md) | 
-| Module 2 | Provision Confluent Cloud environment |
-| Module 3 | Publish events to Kafka |
-| Module 4 | Spark Strctured Streaming Kafka consumer - basic |
-| Module 5 | Spark Strctured Streaming Kafka  consumer - join with static data |
+| Module 2 | [Provision Confluent Cloud environment](04-lab-guide/M2-confluent-kafka-setup.md) |
+| Module 3 | [Publish events to Kafka](04-lab-guide/M3-produce-messages.md) |
+| Module 4 | [Spark Strctured Streaming Kafka consumer - basic](04-lab-guide/M4-stream-sink-bq.md) |
+| Module 5 | [Spark Strctured Streaming Kafka  consumer - join with static data](04-lab-guide/M5-stream-join-sink-bq.md) |
 
 ## 6. Dont forget to 
 Shut down/delete resources when done to avoid unnecessary billing.
