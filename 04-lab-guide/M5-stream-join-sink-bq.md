@@ -165,7 +165,7 @@ Validate with the command below or on the UI-
 ```
 gcloud dataproc batches list  --region=us-central1
 ```
- <br><br>
+<br><br>
 
 <hr>
-This concludes the module, proceed to the next module that covers joining a stream to static data.
+This concludes the lab. Please be sure to shutdown your GCP project to avoid unnecessary charges.
