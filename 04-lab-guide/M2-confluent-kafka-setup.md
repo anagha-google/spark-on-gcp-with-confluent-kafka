@@ -55,7 +55,6 @@ If you are a GCP CE, use your @google.com address and not Argolis email.
 ![CC](../00-images/cc8.png)  
 <br><br>
 
-
 <hr>
 
 ## 2. Install Confluent Cloud client on Cloud Shell
@@ -112,6 +111,9 @@ confluent login
 
 ## 3. Create Confluent environment and cluster
 
+![CC](../00-images/M2-04.png) 
+<br><br>
+
 ### 3.1. Create environment from confluent cli on cloud shell
 
 3.1.1. Create environment from the CLI
@@ -150,6 +152,8 @@ Now using "env-12kmy5" as the default (active) environment.
 ```
 
 ### 3.2. Create cluster from the Confluent Cloud UI
+![CC](../00-images/M2-05.png) 
+<br><br>
 
 Follow the screenshots below and create a cluster called gaia.
 
@@ -212,6 +216,9 @@ Follow the screenshots below and create a cluster called gaia.
 <hr>
 
 ## 4. Create a Kafka topic from the Confluent CLI on Cloud Shell
+
+![CC](../00-images/M2-06.png) 
+<br><br>
 
 4.1. List the clusters in the environment
 
@@ -284,6 +291,9 @@ confluent kafka topic list --cluster $GAIA_CLUSTER_ID
 <hr>
 
 ## 5. Configuration we need to publish to Kafka and consume from Kafka
+
+![CC](../00-images/M2-07.png) 
+<br><br>
 
 5.1. Create an API key and grab the cluster username and password from Confluent CLI
 
