@@ -85,7 +85,7 @@ gcloud dataproc batches submit \
  <br>
  
  
-![DP](../00-images/module5-01.png) 
+![DP](../00-images/module4-01.png) 
  <br><br>
  
 ![DP](../00-images/module5-02.png) 
@@ -97,15 +97,26 @@ gcloud dataproc batches submit \
  
  <hr>
 
-## 4. Validate entries in BigQuery UI
+## 4. View promotions and corressponding winners in BigQuery UI
 
-You should see properly parsed events in BigQuery with this-
+### 4.1. Promotions 
+Run this query in the BigQuery UI-
 ```
-SELECT * FROM marketing_ds.winners LIMIT 1000
+SELECT * FROM marketing_ds.promotions LIMIT 100
 ```
 
-![DP](../00-images/module4-05.png) 
+![DP](../00-images/module5-04.png) 
  <br><br>
+ 
+### 4.2. Winners
+Run this query in the BigQuery UI-
+```
+SELECT * FROM marketing_ds.winners LIMIT 100
+```
+
+![DP](../00-images/module5-05.png) 
+ <br><br>
+ 
 
 <hr>
 
