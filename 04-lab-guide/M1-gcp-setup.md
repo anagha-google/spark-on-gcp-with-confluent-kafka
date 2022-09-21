@@ -2,7 +2,7 @@
 # About
 This module covers GCP Spark environment provisioning for the workshop. This module including the environment provisioning takes ~15 minutes to complete. 
 
-## Note:
+### Note:
 1. **Ensure services in use in the workshop are available in the location of your preference** and modify the variables in step 2.4.1 to reflect the same.
 2. Get any preview services **allow-listed**
 3. Some of the organization policies many not apply for your company, modify appropriately
@@ -10,7 +10,7 @@ This module covers GCP Spark environment provisioning for the workshop. This mod
 5. Terraform state is deliberately local for simplicity
 6. Be sure to check out section 5 for glitches/nuances and workarounds.
 
-## Steps in the lab:
+### Steps in the lab:
 ![M1](../00-images/M1-03.png) 
 <br><br>
 
@@ -42,15 +42,22 @@ The following services need to be created for the lab which are covered in the T
 
 <hr>
 
-## 2. Create the environment
+## 2. Provision the GCP environment 
 
 ### 2.1. Create a directory in Cloud Shell for the workshop
+![M1](../00-images/M1-04.png) 
+<br><br>
+
 ```
 cd ~
 mkdir spark-kafka-lab
 ```
 
 ### 2.2. Clone the workshop git repo
+
+![M1](../00-images/M1-05.png) 
+<br><br>
+
 ```
 cd ~/spark-kafka-lab
 git clone https://github.com/anagha-google/spark-on-gcp-with-confluent-kafka.git
@@ -80,6 +87,9 @@ The parameters to be passed to the Terraform script are available in this file
 5. Validate the environment created
 
 ### 2.4. Provision the environment
+
+![M1](../00-images/M1-06.png) 
+<br><br>
 
 #### 2.4.1. Define variables for use
 Modify the below as appropriate for your deployment..e.g. region, zone etc. Be sure to use the right case for GCP region & zone.<br>
@@ -148,6 +158,10 @@ terraform apply \
 <hr>
 
 ## 3. Validate your Terraform deployment against a pictorial overview of services provisioned & customization
+
+![M1](../00-images/M1-07.png) 
+<br><br>
+
 Available [here]
 
 TODO
