@@ -88,10 +88,12 @@ The parameters to be passed to the Terraform script are available in this file
 
 ### 2.4. Provision the environment
 
+
+
+#### 2.4.1. Define variables for use
 ![M1](../00-images/M1-06.png) 
 <br><br>
 
-#### 2.4.1. Define variables for use
 Modify the below as appropriate for your deployment..e.g. region, zone etc. Be sure to use the right case for GCP region & zone.<br>
 Regions and zones listing can be found [here](https://cloud.google.com/compute/docs/regions-zones)(zone has a -a/b/c as suffix to region/location).<br>
 
@@ -119,6 +121,10 @@ echo "UMSA_FQN=$UMSA_FQN"
 ```
 
 ### 2.4.2. Initialize Terraform
+
+![M1](../00-images/M1-07.png) 
+<br><br>
+
 Needs to run in cloud shell from ~/spark-kafka-lab/spark-on-gcp-with-confluent-kafka/01-environment-setup
 ```
 terraform init
@@ -159,7 +165,7 @@ terraform apply \
 
 ## 3. Validate your Terraform deployment against a pictorial overview of services provisioned & customization
 
-![M1](../00-images/M1-07.png) 
+![M1](../00-images/M1-08.png) 
 <br><br>
 
 Available [here]
