@@ -19,18 +19,53 @@ Dataproc Serverless Spark Batches Runtime: 1.0.15<br>
 3. Spark and BigQuery: https://cloud.google.com/dataproc/docs/tutorials/bigquery-connector-spark-example
 
  <hr>
+ 
+## 1. Insert promotions for the day into the promotions table in BigQuery
+This step need not be run if the entire lab is completed in the same day. If module 1 was completed previously, we need to load new promotions for todfay.
 
-## 1. Start the producer
+Run the below in cloud shell-
+```
+bq query --use_legacy_sql=false 'DELETE FROM marketing_ds.promotions WHERE 0=0;'
+bq query --use_legacy_sql=false 'INSERT INTO marketing_ds.promotions(day,promotion,participation_number)VALUES(FORMAT_DATE("%G%m%d",current_date()),"5 day cruise to Alaska",5);'
+bq query --use_legacy_sql=false 'INSERT INTO marketing_ds.promotions(day,promotion,participation_number)VALUES(FORMAT_DATE("%G%m%d",current_date()),"14 day hiking trip to Kilimanjaro, Tanzania",13);'
+bq query --use_legacy_sql=false 'INSERT INTO marketing_ds.promotions(day,promotion,participation_number)VALUES(FORMAT_DATE("%G%m%d",current_date()),"A week in Cambodia",21);'
+bq query --use_legacy_sql=false 'INSERT INTO marketing_ds.promotions(day,promotion,participation_number)VALUES(FORMAT_DATE("%G%m%d",current_date()),"5 day cruise to Alaska",55);'
+bq query --use_legacy_sql=false 'INSERT INTO marketing_ds.promotions(day,promotion,participation_number)VALUES(FORMAT_DATE("%G%m%d",current_date()),"14 day hiking trip to Kilimanjaro, Tanzania",1313);'
+bq query --use_legacy_sql=false 'INSERT INTO marketing_ds.promotions(day,promotion,participation_number)VALUES(FORMAT_DATE("%G%m%d",current_date()),"A week in Cambodia",2121);'
+bq query --use_legacy_sql=false 'INSERT INTO marketing_ds.promotions(day,promotion,participation_number)VALUES(FORMAT_DATE("%G%m%d",current_date()),"5 day cruise to Alaska",555);'
+bq query --use_legacy_sql=false 'INSERT INTO marketing_ds.promotions(day,promotion,participation_number)VALUES(FORMAT_DATE("%G%m%d",current_date()),"14 day hiking trip to Kilimanjaro, Tanzania",12313);'
+bq query --use_legacy_sql=false 'INSERT INTO marketing_ds.promotions(day,promotion,participation_number)VALUES(FORMAT_DATE("%G%m%d",current_date()),"A week in Cambodia",29);'
+bq query --use_legacy_sql=false 'INSERT INTO marketing_ds.promotions(day,promotion,participation_number)VALUES(FORMAT_DATE("%G%m%d",current_date()),"5 day cruise to Alaska",23456);'
+bq query --use_legacy_sql=false 'INSERT INTO marketing_ds.promotions(day,promotion,participation_number)VALUES(FORMAT_DATE("%G%m%d",current_date()),"14 day hiking trip to Kilimanjaro, Tanzania",12345);'
+bq query --use_legacy_sql=false 'INSERT INTO marketing_ds.promotions(day,promotion,participation_number)VALUES(FORMAT_DATE("%G%m%d",current_date()),"A week in Cambodia",4567);'
+bq query --use_legacy_sql=false 'INSERT INTO marketing_ds.promotions(day,promotion,participation_number)VALUES(FORMAT_DATE("%G%m%d",current_date()),"5 day cruise to Alaska",444);'
+bq query --use_legacy_sql=false 'INSERT INTO marketing_ds.promotions(day,promotion,participation_number)VALUES(FORMAT_DATE("%G%m%d",current_date()),"14 day hiking trip to Kilimanjaro, Tanzania",333);'
+bq query --use_legacy_sql=false 'INSERT INTO marketing_ds.promotions(day,promotion,participation_number)VALUES(FORMAT_DATE("%G%m%d",current_date()),"A week in Cambodia",222);'
+```
+
+Validate in BigQuery UI-
+```
+SELECT * FROM marketing_ds.promotions LIMIT 100
+```
+
+![DP](../00-images/module5-04.png) 
+ <br><br>
+
+
+## 2. Start the producer
 
 In the prior module we learned to send messages to a Kafka topic. Start the producer in a Cloud shell terminal window as detailed in the prior module, unless its already running.
 
+![DP](../00-images/module5-06.png) 
+ <br><br>
+
  <hr>
 
-## 2. Declare variables in Cloud Shell
+## 3. Declare variables in Cloud Shell
 
 If you have the producer running, open a new terminal tab in Cloud shell and paste the variables. Its important to be in the right project, as you run this module.
 
-### 2.1. Your custom variables
+### 3.1. Your custom variables
 Replace the variables below with your region and Kafka details, and paste in Cloud Shell-
 ```
 YOUR_GCP_REGION="us-central1"
@@ -40,7 +75,7 @@ KAFKA_API_SECRET="YOUR_KAFKA_API_SECRET"
 ```
  <hr>
  
-### 2.2. Other variables
+### 3.2. Other variables
 ```
 PROJECT_ID=`gcloud config list --format "value(core.project)" 2>/dev/null`
 PROJECT_NBR=`gcloud projects describe $PROJECT_ID | grep projectNumber | cut -d':' -f2 |  tr -d "'" | xargs`
@@ -61,7 +96,7 @@ KAFKA_TOPIC_NM="entries"
 ```
  <hr>
 
-## 3. Start the Kafka consumer application in Cloud Shell
+## 4. Start the Kafka consumer application in Cloud Shell
 ```
 gcloud dataproc batches submit \
   pyspark $CODE_BUCKET_URI/streaming_consumer_with_joins.py  \
@@ -80,7 +115,7 @@ gcloud dataproc batches submit \
 
  <hr>
  
- ## 4. Monitor the Kafka consumer Spark application in the Dataproc Batches UI on Cloud Console 
+ ## 5. Monitor the Kafka consumer Spark application in the Dataproc Batches UI on Cloud Console 
  
  <br>
  
@@ -97,18 +132,9 @@ gcloud dataproc batches submit \
  
  <hr>
 
-## 4. View promotions and corressponding winners in BigQuery UI
+## 6. View promotions and corressponding winners in BigQuery UI
 
-### 4.1. Promotions 
-Run this query in the BigQuery UI-
-```
-SELECT * FROM marketing_ds.promotions LIMIT 100
-```
 
-![DP](../00-images/module5-04.png) 
- <br><br>
- 
-### 4.2. Winners
 Run this query in the BigQuery UI-
 ```
 SELECT * FROM marketing_ds.winners LIMIT 100
@@ -120,7 +146,7 @@ SELECT * FROM marketing_ds.winners LIMIT 100
 
 <hr>
 
-## 5. Stop your streaming job
+## 7. Stop your streaming job
 
 To avoid charges, stop the streaming job. 
 1. First hit control+c from the keyboard to exit out of the gcloud command running the streaming job
