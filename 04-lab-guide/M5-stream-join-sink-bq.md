@@ -150,7 +150,7 @@ SELECT * FROM marketing_ds.winners LIMIT 100
 
 <hr>
 
-## 7. Stop your streaming job
+## 7. Stop & kill your streaming job
 
 To avoid charges, stop the streaming job. 
 1. First hit control+c from the keyboard to exit out of the gcloud command running the streaming job
