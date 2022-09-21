@@ -19,6 +19,13 @@
 
 ## 5. Lab modules
 
+| Module| Collaborators | 
+| -- | :--- | 
+| Module 1 | [Provision Google Cloud environment with Terraform](04-lab-guide/M1-gcp-setup.md) | 
+| Module 2 | Provision Confluent Cloud environment |
+| Module 3 | Publish events to Kafka |
+| Module 4 | Spark Strctured Streaming Kafka consumer - basic |
+| Module 5 | Spark Strctured Streaming Kafka  consumer - join with static data |
 
 ## 6. Dont forget to 
 Shut down/delete resources when done to avoid unnecessary billing.
@@ -29,7 +36,7 @@ Shut down/delete resources when done to avoid unnecessary billing.
 | # | Collaborators | Company  | Contribution  | 
 | -- | :--- | :--- | :--- |
 | 1. | Anagha Khanolkar | Google Cloud | Author of Spark application |
-| 2. | Elena Cuevas | Confluent  | Author for Kafka producer |
+| 2. | Elena Cuevas | Confluent  | Lab vision & Kafka producer code |
 
 <hr>
 
