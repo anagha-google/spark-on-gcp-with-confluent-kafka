@@ -1,1 +1,1 @@
-# spark-on-gcp-with-confluent-kafka
+# Streaming at scale with Spark on GCP and Confluent Kafka
