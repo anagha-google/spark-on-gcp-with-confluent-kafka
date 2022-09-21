@@ -1,6 +1,6 @@
 # Streaming at scale with Spark on GCP and Confluent Kafka
 
-## 1. About the lab
+## 1. About 
 
 <hr>
 
@@ -17,13 +17,13 @@ Note: The above is not covered in the lab. The scripts are pre-created.
 ![LP](00-images/LP-SolArch.png) 
 <br><br>
 
-## 3. Use case
+## 3. Use Case
 
 The use case is basic sales and marketing campaign and promotion centric. Assume users logging on to a website and their data streamed to Kafka, and automatically entered into  promotions/lotto for a trip. 
 
 <hr>
 
-## 4. The data
+## 4. The Data
 
 
 ![LP](00-images/LP-data.png) 
@@ -31,7 +31,7 @@ The use case is basic sales and marketing campaign and promotion centric. Assume
 
 <hr>
 
-## 5. Lab modules
+## 5. Lab Modules
 
 | Module| Collaborators | 
 | -- | :--- | 
@@ -41,7 +41,7 @@ The use case is basic sales and marketing campaign and promotion centric. Assume
 | Module 4 | [Spark Strctured Streaming Kafka consumer - basic](04-lab-guide/M4-stream-sink-bq.md) |
 | Module 5 | [Spark Strctured Streaming Kafka  consumer - join with static data](04-lab-guide/M5-stream-join-sink-bq.md) |
 
-## 6. Dont forget to 
+## 6. Remember...
 Shut down/delete resources when done to avoid unnecessary billing.
 
 <hr>
@@ -54,12 +54,12 @@ Shut down/delete resources when done to avoid unnecessary billing.
 
 <hr>
 
-## 8. Contributions welcome
+## 8. Contributions 
 Community contribution to improve the lab is very much appreciated. <br>
 
 <hr>
 
-## 9. Getting help
+## 9. Getting Help
 If you have any questions or if you found any problems with this repository, please report through GitHub issues.
 
 <hr>
