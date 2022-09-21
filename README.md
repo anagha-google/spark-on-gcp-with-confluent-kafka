@@ -12,8 +12,11 @@
 
 <hr>
 
-## 4. Data
+## 4. The data
 
+
+![LP](00-images/LP-data.png) 
+<br><br>
 
 <hr>
 
