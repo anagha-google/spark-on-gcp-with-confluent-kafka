@@ -62,8 +62,8 @@ The use case is basic sales and marketing campaign and promotion centric. Assume
 | Module 1 | [Provision Google Cloud environment with Terraform](04-lab-guide/M1-gcp-setup.md) | 
 | Module 2 | [Provision Confluent Cloud environment](04-lab-guide/M2-confluent-kafka-setup.md) |
 | Module 3 | [Publish events to Kafka](04-lab-guide/M3-produce-messages.md) |
-| Module 4 | [Spark Strctured Streaming Kafka consumer - basic](04-lab-guide/M4-stream-sink-bq.md) |
-| Module 5 | [Spark Strctured Streaming Kafka  consumer - join with static data](04-lab-guide/M5-stream-join-sink-bq.md) |
+| Module 4 | [Spark Structured Streaming Kafka consumer - basic](04-lab-guide/M4-stream-sink-bq.md) |
+| Module 5 | [Spark Structured Streaming Kafka  consumer - join with static data](04-lab-guide/M5-stream-join-sink-bq.md) |
 
 <hr>
 
