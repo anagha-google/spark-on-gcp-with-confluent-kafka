@@ -134,4 +134,5 @@ gcloud dataproc batches list  --region=us-central1
  <br><br>
 
 <hr>
+
 This concludes the module, proceed to the [next module](../M5-stream-join-sink-bq.md) that covers joining a stream to static data.
