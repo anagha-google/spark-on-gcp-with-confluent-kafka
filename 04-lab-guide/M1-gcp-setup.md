@@ -12,12 +12,23 @@ This module covers GCP Spark environment provisioning for the workshop. This mod
 
 ## 1. Details about the environment that is setup by this module
 
-### 1.1. Services created
-The following services need to be created for the lab-
+### 1.1. Products/services used in the lab
+The following services need to be created for the lab which are covered in the Terraform script-
 ![M1](../00-images/M1-01.png) 
 <br><br>
 
-### 1.2. Purpose
+### 1.2. Purpose served by the product/services
+
+| # | Product/Service | Purpose  | 
+| -- | :--- | :--- |
+| 1. | Confluent Kafka | Streaming platform |
+| 2. | Cloud Dataproc | Serverless Spark infrastructure<br>Persistent Spark History Server |
+| 3. | BigQuery | Source for promotions data, sink for promotion winners data |
+| 4. | Cloud IAM | User Managed Service Account, IAM roles |
+| 5. | VPC | Network, Subnet |
+| 6. | Firewall | Rule to allow internode communication by Spark node roles |
+| 7. | Cloud Router<>Cloud NAT | Dataproc Serverless is a private setup and needs router and NAT setup to access Confluent Cloud over the internet |
+
 
 
 <hr>
