@@ -115,7 +115,7 @@ confluent login
 
 ### 3.1. Create environment from confluent cli on cloud shell
 
-![CC](../00-images/M2-05.png) 
+![CC](../00-images/M2-04.png) 
 <br><br>
 
 3.1.1. Create environment from the CLI
@@ -154,6 +154,7 @@ Now using "env-12kmy5" as the default (active) environment.
 ```
 
 ### 3.2. Create cluster from the Confluent Cloud UI
+
 ![CC](../00-images/M2-05.png) 
 <br><br>
 
