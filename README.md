@@ -38,7 +38,7 @@ About Dataproc Serverless Spark Batches:
 Fully managed, autoscalable, secure Spark jobs as a service that eliminates administration overhead and resource contention, simplifies development and accelerates speed to production. Learn more about the service [here](https://cloud.google.com/dataproc-serverless/docs). <br>
 
 - Find templates that accelerate speed to production [here](https://github.com/GoogleCloudPlatform/dataproc-templates)
-- Want Google Cloud to train you on Serverless Spark for free, reach out to us [here]()
+- Want Google Cloud to train you on Serverless Spark for free, reach out to us [here](https://forms.gle/8ekUAFYd5xXvi2Hy9)
 - Try out our other Serverless Spark centric hands on labs [here](https://github.com/GoogleCloudPlatform/serverless-spark-workshop)
 
 
