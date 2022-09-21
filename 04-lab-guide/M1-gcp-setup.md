@@ -12,13 +12,12 @@ This module covers GCP Spark environment provisioning for the workshop. This mod
 
 ## 1. Details about the environment that is setup by this module
 
-TODO
+### 1.1. Services created
+The following services need to be created for the lab-
+![M1](../00-images/M1-01.png) 
+<br><br>
 
-## Pictorial walkthrough of services provisioned & customization
-The author's environment is showcased [here](../05-lab-guide/Services-Created.md)
-
-
-TODO
+### 1.2. Purpose
 
 
 <hr>
@@ -28,19 +27,37 @@ TODO
 ### 2.1. Create a directory in Cloud Shell for the workshop
 ```
 cd ~
-mkdir next22
+mkdir spark-kafka-lab
 ```
 
 ### 2.2. Clone the workshop git repo
 ```
-cd ~/next22
+cd ~/spark-kafka-lab
 git clone https://github.com/anagha-google/spark-on-gcp-with-confluent-kafka.git
 ```
 
-### 2.3. Navigate to the Terraform provisioning directory
+### 2.3. About the Terraform script
+
+#### 2.3.1. Navigate to the Terraform directory
 ```
-cd ~/next22/spark-on-gcp-with-confluent-kafka/01-environment-setup
+cd ~/spark-kafka-lab/spark-on-gcp-with-confluent-kafka/01-environment-setup
 ```
+
+#### 2.3.2. Study main.tf
+It does the below, except not exactly in sequential order, but rather in parallel where possible-
+![M1](../00-images/M1-02.png) 
+<br><br>
+
+#### 2.3.3. Study variables.tf
+The parameters to be passed to the Terraform script are available in this file
+
+#### 2.3.4. What we will do next
+
+1. Define variables for use by the Terraform
+2. Initialize Terraform
+3. Run a Terraform plan & study it
+4. Apply the Terraform to create the environment
+5. Validate the environment created
 
 ### 2.4. Provision the environment
 
@@ -72,13 +89,13 @@ echo "UMSA_FQN=$UMSA_FQN"
 ```
 
 ### 2.4.2. Initialize Terraform
-Needs to run in cloud shell from ~/next22/spark-on-gcp-with-confluent-kafka/01-environment-setup
+Needs to run in cloud shell from ~/spark-kafka-lab/spark-on-gcp-with-confluent-kafka/01-environment-setup
 ```
 terraform init
 ```
 
 #### 2.4.3. Review the Terraform deployment plan
-Needs to run in cloud shell from ~/next22/spark-on-gcp-with-confluent-kafka/01-environment-setup
+Needs to run in cloud shell from ~/spark-kafka-lab/spark-on-gcp-with-confluent-kafka/01-environment-setup
 ```
 terraform plan \
   -var="project_id=${PROJECT_ID}" \
@@ -93,7 +110,7 @@ terraform plan \
 ```
 
 #### 2.4.4. Provision the environment
-Needs to run in cloud shell from ~/next22/spark-on-gcp-with-confluent-kafka/01-environment-setup
+Needs to run in cloud shell from ~/spark-kafka-lab/spark-on-gcp-with-confluent-kafka/01-environment-setup
 ```
 terraform apply \
   -var="project_id=${PROJECT_ID}" \
