@@ -46,7 +46,7 @@ Fully managed, autoscalable, secure Spark jobs as a service that eliminates admi
 
 ![LP](00-images/LP-Dev.png) 
 <br><br>
-Note: The above is not covered in the lab. The scripts are pre-created.
+Note: The above is not covered in this lab. 
 
 
 <hr>
