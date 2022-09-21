@@ -18,6 +18,11 @@ Dataproc Serverless Spark Batches Runtime: 1.0.15<br>
 2. Spark and Kafka: https://spark.apache.org/docs/latest/structured-streaming-kafka-integration.html
 3. Spark and BigQuery: https://cloud.google.com/dataproc/docs/tutorials/bigquery-connector-spark-example
 
+### Architecture:
+
+![M5](../00-images/M5-00.png) 
+<br><br>
+
  <hr>
  
 ## 1. Insert promotions for the day into the promotions table in BigQuery
