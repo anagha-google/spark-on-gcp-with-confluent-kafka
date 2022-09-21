@@ -42,7 +42,7 @@ Fully managed, autoscalable, secure Spark jobs as a service that eliminates admi
 - Try out our other Serverless Spark centric hands on labs [here](https://github.com/GoogleCloudPlatform/serverless-spark-workshop)
 
 
-### 2.2. Potential Development Environment
+### 2.2. Development Environment
 
 ![LP](00-images/LP-Dev.png) 
 <br><br>
