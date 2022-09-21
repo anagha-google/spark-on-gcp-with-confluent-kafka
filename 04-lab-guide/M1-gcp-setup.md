@@ -165,29 +165,28 @@ terraform apply \
 
 ## 3. Validate your Terraform deployment against a pictorial overview of services provisioned & customization
 
-![M1](../00-images/M1-08.png) 
+![M1](../00-images/M1-09.png) 
 <br><br>
 
-![M1](../00-images/M1-08.png) 
+![M1](../00-images/M1-10.png) 
 <br><br>
 
-![M1](../00-images/M1-08.png) 
+![M1](../00-images/M1-11.png) 
 <br><br>
 
-![M1](../00-images/M1-08.png) 
+![M1](../00-images/M1-12.png) 
 <br><br>
 
-![M1](../00-images/M1-08.png) 
+![M1](../00-images/M1-13.png) 
 <br><br>
 
-![M1](../00-images/M1-08.png) 
+![M1](../00-images/M1-14.png) 
 <br><br>
 
-![M1](../00-images/M1-08.png) 
+![M1](../00-images/M1-15.png) 
 <br><br>
 
-![M1](../00-images/M1-08.png) 
-<br><br>
+
 
 ### 3.5. Dataproc Persistent Spark History Server
 
