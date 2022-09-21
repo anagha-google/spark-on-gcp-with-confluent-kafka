@@ -30,6 +30,11 @@ The following services need to be created for the lab which are covered in the T
 | 7. | Cloud Router<br>Cloud NAT | Dataproc Serverless is a private setup and needs router and NAT setup to access Confluent Cloud over the internet |
 | 8. | Cloud Storage | Pyspark scripts, Spark checkpoints, BQ Spark connector sratch bucket, and logs |
 
+### 1.3. Tooling
+
+1. Terraform for automation
+2. Cloud Shell for executing Terraform
+
 <hr>
 
 ## 2. Create the environment
