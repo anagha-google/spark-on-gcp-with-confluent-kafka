@@ -165,30 +165,70 @@ terraform apply \
 
 ## 3. Validate your Terraform deployment against a pictorial overview of services provisioned & customization
 
+### 3.1. IAM 
+
 ![M1](../00-images/M1-09.png) 
 <br><br>
 
 ![M1](../00-images/M1-10.png) 
 <br><br>
 
+
+### 3.2. Cloud Storage Buckets 
+
 ![M1](../00-images/M1-11.png) 
 <br><br>
+
+### 3.3. BigQuery Dataset and Tables
 
 ![M1](../00-images/M1-12.png) 
 <br><br>
 
+### 3.4. VPC Network
+
 ![M1](../00-images/M1-13.png) 
 <br><br>
+
+### 3.5. Subnet
 
 ![M1](../00-images/M1-14.png) 
 <br><br>
 
-![M1](../00-images/M1-15.png) 
+### 3.6. Firewall
+
+
+![M1](../00-images/M1-19.png) 
 <br><br>
 
 
+![M1](../00-images/M1-20.png) 
+<br><br>
 
-### 3.5. Dataproc Persistent Spark History Server
+### 3.7. Cloud Router
+
+
+![M1](../00-images/M1-21.png) 
+<br><br>
+
+
+![M1](../00-images/M1-22.png) 
+<br><br>
+
+### 3.8. Cloud NAT
+
+
+![M1](../00-images/M1-23.png) 
+<br><br>
+
+
+![M1](../00-images/M1-24.png) 
+<br><br>
+
+
+### 3.9. Dataproc Persistent Spark History Server
+
+![M1](../00-images/M1-15.png) 
+<br><br>
 
 ![M1](../00-images/M1-16.png) 
 <br><br>
