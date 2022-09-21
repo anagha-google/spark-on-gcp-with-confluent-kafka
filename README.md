@@ -39,7 +39,7 @@ Fully managed, autoscalable, secure Spark jobs as a service that eliminates admi
 
 - Find templates that accelerate speed to production [here](https://github.com/GoogleCloudPlatform/dataproc-templates)
 - Want Google Cloud to train you on Serverless Spark for free, reach out to us [here](https://forms.gle/8ekUAFYd5xXvi2Hy9)
-- Try out our other Serverless Spark centric hands on labs [here](https://github.com/GoogleCloudPlatform/serverless-spark-workshop)
+- Try out our other Serverless Spark centric hands-on labs [here](https://github.com/GoogleCloudPlatform/serverless-spark-workshop)
 
 
 ### 2.2. Development Environment
