@@ -2,7 +2,7 @@
 
 ## 1. About 
 
-This repo is a hands-on lab for streaming from Kafka on Confluent Cloud and into BigQuery, with Apache Spark Structured Streaming on Dataproc Serverless Spark. It strives to demystify the products showcases and is less about building a perfect streaming application. It features a minimum viable example of joining a stream from Kafka with a static source in BigQuery, and sinking to BigQuery. 
+This repo is a hands-on lab for streaming from Kafka on Confluent Cloud into BigQuery, with Apache Spark Structured Streaming on Dataproc Serverless Spark. It strives to demystify the products showcased and is less about building a perfect streaming application. It features a minimum viable example of joining a stream from Kafka with a static source in BigQuery, and sinking to BigQuery. 
 
 ### Audience
 Data engineers
