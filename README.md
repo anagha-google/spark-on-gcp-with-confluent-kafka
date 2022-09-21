@@ -27,7 +27,7 @@ Shut down/delete resources when done to avoid unnecessary billing.
 
 ## 7. Credits
 | # | Collaborators | Company  | Contribution  | 
-| -- | :--- | :--- |
+| -- | :--- | :--- | :--- |
 | 1. | Anagha Khanolkar | Google Cloud | Author of Spark application |
 | 2. | Elena Cuevas | Confluent  | Author for Kafka producer |
 
