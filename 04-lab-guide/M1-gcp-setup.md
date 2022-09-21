@@ -10,6 +10,11 @@ This module covers GCP Spark environment provisioning for the workshop. This mod
 5. Terraform state is deliberately local for simplicity
 6. Be sure to check out section 5 for glitches/nuances and workarounds.
 
+## Steps in the lab:
+![M1](../00-images/M1-03.png) 
+<br><br>
+
+
 ## 1. Details about the environment that is setup by this module
 
 ### 1.1. Products/services used in the lab
