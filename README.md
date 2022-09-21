@@ -1,4 +1,4 @@
-# Streaming Analytics at scale with Spark on GCP and Confluent Kafka
+# Practical Streaming Analytics at scale with Spark on GCP and Confluent Kafka
 
 ## 1. About 
 
