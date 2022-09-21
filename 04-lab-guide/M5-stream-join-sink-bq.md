@@ -21,7 +21,7 @@ Dataproc Serverless Spark Batches Runtime: 1.0.15<br>
  <hr>
  
 ## 1. Insert promotions for the day into the promotions table in BigQuery
-This step need not be run if the entire lab is completed in the same day. If module 1 was completed previously, we need to load new promotions for todfay.
+This step needs to be run each day.
 
 Run the below in cloud shell-
 ```
