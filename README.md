@@ -8,7 +8,7 @@
 
 ### 2.1. Potential Development Environment
 
-![LP](00-images/LP-dev.png) 
+![LP](00-images/LP-Dev.png) 
 <br><br>
 
 ### 2.2. Solution Architecture
