@@ -46,7 +46,7 @@ Fully managed, autoscalable, secure Spark jobs as a service that eliminates admi
 
 ![LP](00-images/LP-Dev.png) 
 <br><br>
-Note: The above notebook environment is not covered in this lab, but is showcased in our [Spark MLOps lab](https://github.com/anagha-google/s8s-spark-mlops). 
+Note: The above notebook environment is not covered in this lab, but is showcased in our [Spark MLOps lab](https://github.com/anagha-google/s8s-spark-mlops-lab). 
 
 
 <hr>
